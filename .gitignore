@@ -1,0 +1,44 @@
+# --------------------------------------------------------------------------
+# Standard Xcode, ObjC, Swift
+# https://github.com/github/gitignore/blob/master/Global/Xcode.gitignore
+# https://github.com/github/gitignore/blob/master/Objective-C.gitignore
+# https://github.com/github/gitignore/blob/master/Swift.gitignore
+# --------------------------------------------------------------------------
+
+## Build generated
+build/
+DerivedData/
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+*.xcuserstate
+
+# --------------------------------------------------------------------------
+# Fastlane
+# https://github.com/fastlane/fastlane
+# --------------------------------------------------------------------------
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# --------------------------------------------------------------------------
+# Code Injection
+# https://github.com/johnno1962/injectionforxcode
+# --------------------------------------------------------------------------
+
+iOSInjectionProject/
