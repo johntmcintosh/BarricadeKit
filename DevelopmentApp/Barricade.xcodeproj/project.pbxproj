@@ -7,16 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B11E8B61EC0C13D0011832A /* BarricadeDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11E8B51EC0C13D0011832A /* BarricadeDispatch.swift */; };
 		5B9E8E851EBCF7D4002A85B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8E841EBCF7D4002A85B5 /* AppDelegate.swift */; };
 		5B9E8E871EBCF7D4002A85B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8E861EBCF7D4002A85B5 /* ViewController.swift */; };
 		5B9E8E8A1EBCF7D4002A85B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9E8E881EBCF7D4002A85B5 /* Main.storyboard */; };
 		5B9E8E8C1EBCF7D4002A85B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9E8E8B1EBCF7D4002A85B5 /* Assets.xcassets */; };
 		5B9E8E8F1EBCF7D4002A85B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9E8E8D1EBCF7D4002A85B5 /* LaunchScreen.storyboard */; };
 		5B9E8E9A1EBCF7D4002A85B5 /* BarricadeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8E991EBCF7D4002A85B5 /* BarricadeTests.swift */; };
-		5B9E8EA91EBCFA4B002A85B5 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8EA81EBCFA4B002A85B5 /* Response.swift */; };
-		5B9E8EAC1EBCFD1E002A85B5 /* ResponseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8EAB1EBCFD1E002A85B5 /* ResponseSet.swift */; };
-		5B9E8EAF1EBCFF4F002A85B5 /* ResponseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8EAE1EBCFF4F002A85B5 /* ResponseStore.swift */; };
-		5B9E8EB11EBD00BF002A85B5 /* Barricade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8EB01EBD00BF002A85B5 /* Barricade.swift */; };
+		5B9E8EC11EBD06C1002A85B5 /* BarricadeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9E8EB81EBD06C1002A85B5 /* BarricadeKit.framework */; };
+		5B9E8EC81EBD06C1002A85B5 /* BarricadeKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8EC71EBD06C1002A85B5 /* BarricadeKitTests.swift */; };
+		5B9E8ECA1EBD06C1002A85B5 /* BarricadeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9E8EBA1EBD06C1002A85B5 /* BarricadeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B9E8ECD1EBD06C1002A85B5 /* BarricadeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9E8EB81EBD06C1002A85B5 /* BarricadeKit.framework */; };
+		5B9E8ECE1EBD06C1002A85B5 /* BarricadeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9E8EB81EBD06C1002A85B5 /* BarricadeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5B9E8EDF1EBD072F002A85B5 /* Barricade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8ED81EBD072F002A85B5 /* Barricade.swift */; };
+		5B9E8EE01EBD072F002A85B5 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8EDA1EBD072F002A85B5 /* Response.swift */; };
+		5B9E8EE11EBD072F002A85B5 /* ResponseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8EDC1EBD072F002A85B5 /* ResponseSet.swift */; };
+		5B9E8EE21EBD072F002A85B5 /* ResponseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8EDE1EBD072F002A85B5 /* ResponseStore.swift */; };
 		98ECB0DB8A713AEB0D66C624 /* Pods_Barricade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F1013CA6C3A97D062D2195 /* Pods_Barricade.framework */; };
 		DA6CD1FE1B60DB5A933DB304 /* Pods_Barricade_BarricadeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92BB8569C7684542BB586DE /* Pods_Barricade_BarricadeTests.framework */; };
 /* End PBXBuildFile section */
@@ -29,11 +35,47 @@
 			remoteGlobalIDString = 5B9E8E801EBCF7D4002A85B5;
 			remoteInfo = Barricade;
 		};
+		5B9E8EC21EBD06C1002A85B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B9E8E791EBCF7D4002A85B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B9E8EB71EBD06C1002A85B5;
+			remoteInfo = BarricadeKit;
+		};
+		5B9E8EC41EBD06C1002A85B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B9E8E791EBCF7D4002A85B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B9E8E801EBCF7D4002A85B5;
+			remoteInfo = Barricade;
+		};
+		5B9E8ECB1EBD06C1002A85B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B9E8E791EBCF7D4002A85B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B9E8EB71EBD06C1002A85B5;
+			remoteInfo = BarricadeKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5B9E8ED21EBD06C1002A85B5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5B9E8ECE1EBD06C1002A85B5 /* BarricadeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		28DE845F9CC7DEE88465F164 /* Pods-Barricade-BarricadeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barricade-BarricadeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barricade-BarricadeTests/Pods-Barricade-BarricadeTests.release.xcconfig"; sourceTree = "<group>"; };
 		351880403406CEA5134D5982 /* Pods-Barricade-BarricadeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barricade-BarricadeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Barricade-BarricadeTests/Pods-Barricade-BarricadeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5B11E8B51EC0C13D0011832A /* BarricadeDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarricadeDispatch.swift; sourceTree = "<group>"; };
 		5B9E8E811EBCF7D4002A85B5 /* Barricade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Barricade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9E8E841EBCF7D4002A85B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B9E8E861EBCF7D4002A85B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,10 +86,17 @@
 		5B9E8E951EBCF7D4002A85B5 /* BarricadeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarricadeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9E8E991EBCF7D4002A85B5 /* BarricadeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarricadeTests.swift; sourceTree = "<group>"; };
 		5B9E8E9B1EBCF7D4002A85B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B9E8EA81EBCFA4B002A85B5 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		5B9E8EAB1EBCFD1E002A85B5 /* ResponseSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSet.swift; sourceTree = "<group>"; };
-		5B9E8EAE1EBCFF4F002A85B5 /* ResponseStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseStore.swift; sourceTree = "<group>"; };
-		5B9E8EB01EBD00BF002A85B5 /* Barricade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Barricade.swift; sourceTree = "<group>"; };
+		5B9E8EB21EBD060D002A85B5 /* Barricade.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Barricade.playground; sourceTree = "<group>"; };
+		5B9E8EB81EBD06C1002A85B5 /* BarricadeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BarricadeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B9E8EBA1EBD06C1002A85B5 /* BarricadeKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarricadeKit.h; sourceTree = "<group>"; };
+		5B9E8EBB1EBD06C1002A85B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B9E8EC01EBD06C1002A85B5 /* BarricadeKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarricadeKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B9E8EC71EBD06C1002A85B5 /* BarricadeKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarricadeKitTests.swift; sourceTree = "<group>"; };
+		5B9E8EC91EBD06C1002A85B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B9E8ED81EBD072F002A85B5 /* Barricade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Barricade.swift; sourceTree = "<group>"; };
+		5B9E8EDA1EBD072F002A85B5 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		5B9E8EDC1EBD072F002A85B5 /* ResponseSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSet.swift; sourceTree = "<group>"; };
+		5B9E8EDE1EBD072F002A85B5 /* ResponseStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseStore.swift; sourceTree = "<group>"; };
 		D696C9CD8CAED1058FB9CF32 /* Pods-Barricade.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barricade.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Barricade/Pods-Barricade.debug.xcconfig"; sourceTree = "<group>"; };
 		D92BB8569C7684542BB586DE /* Pods_Barricade_BarricadeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barricade_BarricadeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E9E1F964F3EB91D8FE6DE8 /* Pods-Barricade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barricade.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barricade/Pods-Barricade.release.xcconfig"; sourceTree = "<group>"; };
@@ -60,6 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98ECB0DB8A713AEB0D66C624 /* Pods_Barricade.framework in Frameworks */,
+				5B9E8ECD1EBD06C1002A85B5 /* BarricadeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,14 +121,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5B9E8EB41EBD06C1002A85B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B9E8EBD1EBD06C1002A85B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B9E8EC11EBD06C1002A85B5 /* BarricadeKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		5B9E8E781EBCF7D4002A85B5 = {
 			isa = PBXGroup;
 			children = (
+				5B9E8EB91EBD06C1002A85B5 /* BarricadeKit */,
 				5B9E8E831EBCF7D4002A85B5 /* Barricade */,
 				5B9E8E981EBCF7D4002A85B5 /* BarricadeTests */,
+				5B9E8EC61EBD06C1002A85B5 /* BarricadeKitTests */,
 				5B9E8E821EBCF7D4002A85B5 /* Products */,
 				D240BC6A3DAEFD97BE9CE147 /* Pods */,
 				9D4AB9A70924606B85D87815 /* Frameworks */,
@@ -90,6 +157,8 @@
 			children = (
 				5B9E8E811EBCF7D4002A85B5 /* Barricade.app */,
 				5B9E8E951EBCF7D4002A85B5 /* BarricadeTests.xctest */,
+				5B9E8EB81EBD06C1002A85B5 /* BarricadeKit.framework */,
+				5B9E8EC01EBD06C1002A85B5 /* BarricadeKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,13 +166,13 @@
 		5B9E8E831EBCF7D4002A85B5 /* Barricade */ = {
 			isa = PBXGroup;
 			children = (
-				5B9E8EA41EBCF8F4002A85B5 /* Barricade */,
 				5B9E8E841EBCF7D4002A85B5 /* AppDelegate.swift */,
 				5B9E8E861EBCF7D4002A85B5 /* ViewController.swift */,
 				5B9E8E881EBCF7D4002A85B5 /* Main.storyboard */,
 				5B9E8E8B1EBCF7D4002A85B5 /* Assets.xcassets */,
 				5B9E8E8D1EBCF7D4002A85B5 /* LaunchScreen.storyboard */,
 				5B9E8E901EBCF7D4002A85B5 /* Info.plist */,
+				5B9E8EB21EBD060D002A85B5 /* Barricade.playground */,
 			);
 			path = Barricade;
 			sourceTree = "<group>";
@@ -117,46 +186,66 @@
 			path = BarricadeTests;
 			sourceTree = "<group>";
 		};
-		5B9E8EA41EBCF8F4002A85B5 /* Barricade */ = {
+		5B9E8EB91EBD06C1002A85B5 /* BarricadeKit */ = {
 			isa = PBXGroup;
 			children = (
-				5B9E8EA51EBCF8F4002A85B5 /* Core */,
+				5B9E8ED61EBD072F002A85B5 /* BarricadeKit */,
+				5B9E8EBA1EBD06C1002A85B5 /* BarricadeKit.h */,
+				5B9E8EBB1EBD06C1002A85B5 /* Info.plist */,
 			);
-			name = Barricade;
-			path = ../../Barricade;
+			path = BarricadeKit;
 			sourceTree = "<group>";
 		};
-		5B9E8EA51EBCF8F4002A85B5 /* Core */ = {
+		5B9E8EC61EBD06C1002A85B5 /* BarricadeKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				5B9E8EB01EBD00BF002A85B5 /* Barricade.swift */,
-				5B9E8EA71EBCF9BF002A85B5 /* Response */,
-				5B9E8EAA1EBCFD0F002A85B5 /* ResponseSet */,
-				5B9E8EAD1EBCFF1F002A85B5 /* ResponseStore */,
+				5B9E8EC71EBD06C1002A85B5 /* BarricadeKitTests.swift */,
+				5B9E8EC91EBD06C1002A85B5 /* Info.plist */,
+			);
+			path = BarricadeKitTests;
+			sourceTree = "<group>";
+		};
+		5B9E8ED61EBD072F002A85B5 /* BarricadeKit */ = {
+			isa = PBXGroup;
+			children = (
+				5B9E8ED71EBD072F002A85B5 /* Core */,
+			);
+			name = BarricadeKit;
+			path = ../../BarricadeKit;
+			sourceTree = "<group>";
+		};
+		5B9E8ED71EBD072F002A85B5 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5B9E8ED81EBD072F002A85B5 /* Barricade.swift */,
+				5B11E8B51EC0C13D0011832A /* BarricadeDispatch.swift */,
+				5B9E8ED91EBD072F002A85B5 /* Response */,
+				5B9E8EDB1EBD072F002A85B5 /* ResponseSet */,
+				5B9E8EDD1EBD072F002A85B5 /* ResponseStore */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		5B9E8EA71EBCF9BF002A85B5 /* Response */ = {
+		5B9E8ED91EBD072F002A85B5 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				5B9E8EA81EBCFA4B002A85B5 /* Response.swift */,
+				5B9E8EDA1EBD072F002A85B5 /* Response.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
 		};
-		5B9E8EAA1EBCFD0F002A85B5 /* ResponseSet */ = {
+		5B9E8EDB1EBD072F002A85B5 /* ResponseSet */ = {
 			isa = PBXGroup;
 			children = (
-				5B9E8EAB1EBCFD1E002A85B5 /* ResponseSet.swift */,
+				5B9E8EDC1EBD072F002A85B5 /* ResponseSet.swift */,
 			);
 			path = ResponseSet;
 			sourceTree = "<group>";
 		};
-		5B9E8EAD1EBCFF1F002A85B5 /* ResponseStore */ = {
+		5B9E8EDD1EBD072F002A85B5 /* ResponseStore */ = {
 			isa = PBXGroup;
 			children = (
-				5B9E8EAE1EBCFF4F002A85B5 /* ResponseStore.swift */,
+				5B9E8EDE1EBD072F002A85B5 /* ResponseStore.swift */,
 			);
 			path = ResponseStore;
 			sourceTree = "<group>";
@@ -183,6 +272,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		5B9E8EB51EBD06C1002A85B5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B9E8ECA1EBD06C1002A85B5 /* BarricadeKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		5B9E8E801EBCF7D4002A85B5 /* Barricade */ = {
 			isa = PBXNativeTarget;
@@ -194,10 +294,12 @@
 				5B9E8E7F1EBCF7D4002A85B5 /* Resources */,
 				12810B7BFA5A0895A8F08BD3 /* [CP] Embed Pods Frameworks */,
 				12E5E0B6022E8DB32C77C9F3 /* [CP] Copy Pods Resources */,
+				5B9E8ED21EBD06C1002A85B5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5B9E8ECC1EBD06C1002A85B5 /* PBXTargetDependency */,
 			);
 			name = Barricade;
 			productName = Barricade;
@@ -225,6 +327,43 @@
 			productReference = 5B9E8E951EBCF7D4002A85B5 /* BarricadeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5B9E8EB71EBD06C1002A85B5 /* BarricadeKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B9E8ECF1EBD06C1002A85B5 /* Build configuration list for PBXNativeTarget "BarricadeKit" */;
+			buildPhases = (
+				5B9E8EB31EBD06C1002A85B5 /* Sources */,
+				5B9E8EB41EBD06C1002A85B5 /* Frameworks */,
+				5B9E8EB51EBD06C1002A85B5 /* Headers */,
+				5B9E8EB61EBD06C1002A85B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BarricadeKit;
+			productName = BarricadeKit;
+			productReference = 5B9E8EB81EBD06C1002A85B5 /* BarricadeKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5B9E8EBF1EBD06C1002A85B5 /* BarricadeKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B9E8ED31EBD06C1002A85B5 /* Build configuration list for PBXNativeTarget "BarricadeKitTests" */;
+			buildPhases = (
+				5B9E8EBC1EBD06C1002A85B5 /* Sources */,
+				5B9E8EBD1EBD06C1002A85B5 /* Frameworks */,
+				5B9E8EBE1EBD06C1002A85B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B9E8EC31EBD06C1002A85B5 /* PBXTargetDependency */,
+				5B9E8EC51EBD06C1002A85B5 /* PBXTargetDependency */,
+			);
+			name = BarricadeKitTests;
+			productName = BarricadeKitTests;
+			productReference = 5B9E8EC01EBD06C1002A85B5 /* BarricadeKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -241,6 +380,17 @@
 						ProvisioningStyle = Automatic;
 					};
 					5B9E8E941EBCF7D4002A85B5 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = PSK5X2GYRA;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5B9E8E801EBCF7D4002A85B5;
+					};
+					5B9E8EB71EBD06C1002A85B5 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = PSK5X2GYRA;
+						ProvisioningStyle = Automatic;
+					};
+					5B9E8EBF1EBD06C1002A85B5 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = PSK5X2GYRA;
 						ProvisioningStyle = Automatic;
@@ -263,6 +413,8 @@
 			targets = (
 				5B9E8E801EBCF7D4002A85B5 /* Barricade */,
 				5B9E8E941EBCF7D4002A85B5 /* BarricadeTests */,
+				5B9E8EB71EBD06C1002A85B5 /* BarricadeKit */,
+				5B9E8EBF1EBD06C1002A85B5 /* BarricadeKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -279,6 +431,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5B9E8E931EBCF7D4002A85B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B9E8EB61EBD06C1002A85B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B9E8EBE1EBD06C1002A85B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -385,12 +551,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B9E8EAF1EBCFF4F002A85B5 /* ResponseStore.swift in Sources */,
-				5B9E8EB11EBD00BF002A85B5 /* Barricade.swift in Sources */,
 				5B9E8E871EBCF7D4002A85B5 /* ViewController.swift in Sources */,
-				5B9E8EA91EBCFA4B002A85B5 /* Response.swift in Sources */,
 				5B9E8E851EBCF7D4002A85B5 /* AppDelegate.swift in Sources */,
-				5B9E8EAC1EBCFD1E002A85B5 /* ResponseSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +564,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5B9E8EB31EBD06C1002A85B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B9E8EE11EBD072F002A85B5 /* ResponseSet.swift in Sources */,
+				5B11E8B61EC0C13D0011832A /* BarricadeDispatch.swift in Sources */,
+				5B9E8EE01EBD072F002A85B5 /* Response.swift in Sources */,
+				5B9E8EE21EBD072F002A85B5 /* ResponseStore.swift in Sources */,
+				5B9E8EDF1EBD072F002A85B5 /* Barricade.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B9E8EBC1EBD06C1002A85B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B9E8EC81EBD06C1002A85B5 /* BarricadeKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -409,6 +591,21 @@
 			isa = PBXTargetDependency;
 			target = 5B9E8E801EBCF7D4002A85B5 /* Barricade */;
 			targetProxy = 5B9E8E961EBCF7D4002A85B5 /* PBXContainerItemProxy */;
+		};
+		5B9E8EC31EBD06C1002A85B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B9E8EB71EBD06C1002A85B5 /* BarricadeKit */;
+			targetProxy = 5B9E8EC21EBD06C1002A85B5 /* PBXContainerItemProxy */;
+		};
+		5B9E8EC51EBD06C1002A85B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B9E8E801EBCF7D4002A85B5 /* Barricade */;
+			targetProxy = 5B9E8EC41EBD06C1002A85B5 /* PBXContainerItemProxy */;
+		};
+		5B9E8ECC1EBD06C1002A85B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B9E8EB71EBD06C1002A85B5 /* BarricadeKit */;
+			targetProxy = 5B9E8ECB1EBD06C1002A85B5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -529,6 +726,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D696C9CD8CAED1058FB9CF32 /* Pods-Barricade.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PSK5X2GYRA;
 				INFOPLIST_FILE = Barricade/Info.plist;
@@ -543,6 +741,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F3E9E1F964F3EB91D8FE6DE8 /* Pods-Barricade.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PSK5X2GYRA;
 				INFOPLIST_FILE = Barricade/Info.plist;
@@ -585,6 +784,80 @@
 			};
 			name = Release;
 		};
+		5B9E8ED01EBD06C1002A85B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = PSK5X2GYRA;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BarricadeKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johntmcintosh.BarricadeKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5B9E8ED11EBD06C1002A85B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = PSK5X2GYRA;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BarricadeKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johntmcintosh.BarricadeKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5B9E8ED41EBD06C1002A85B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = PSK5X2GYRA;
+				INFOPLIST_FILE = BarricadeKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johntmcintosh.BarricadeKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Barricade.app/Barricade";
+			};
+			name = Debug;
+		};
+		5B9E8ED51EBD06C1002A85B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = PSK5X2GYRA;
+				INFOPLIST_FILE = BarricadeKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johntmcintosh.BarricadeKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Barricade.app/Barricade";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -611,6 +884,24 @@
 			buildConfigurations = (
 				5B9E8EA21EBCF7D4002A85B5 /* Debug */,
 				5B9E8EA31EBCF7D4002A85B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B9E8ECF1EBD06C1002A85B5 /* Build configuration list for PBXNativeTarget "BarricadeKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B9E8ED01EBD06C1002A85B5 /* Debug */,
+				5B9E8ED11EBD06C1002A85B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B9E8ED31EBD06C1002A85B5 /* Build configuration list for PBXNativeTarget "BarricadeKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B9E8ED41EBD06C1002A85B5 /* Debug */,
+				5B9E8ED51EBD06C1002A85B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

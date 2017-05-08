@@ -9,7 +9,7 @@
 import Foundation
 
 
-protocol ResponseStore {
+public protocol ResponseStore {
     
     var responseSets: [ResponseSet] { get }
     

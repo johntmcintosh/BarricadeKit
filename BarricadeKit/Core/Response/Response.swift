@@ -17,25 +17,25 @@ import Foundation
  This protocol makes no assumptions about where the content of the response comes from. Feel free to
  create additional concrete implementations of this protocol for your own needs.
  */
-protocol Response {
+public protocol Response {
     
     /// The name represents the string name used to identify this request in the context of your app.
     /// It is for the developer's use only.
-    var response: String { get }
+    var name: String { get }
     
     /// The HTTP status code associated with the response. For exapmle, 200 typically represents a standard,
     /// successful response.
     var statusCode: Int { get }
     
     /// Raw representation of the response body.
-    var content: Data { get }
+    var content: Data? { get }
     
     /// A dictionary containing all the HTTP header fields in the response.
     var allHeaderFields: [String: Any] { get }
     
     /// An error representing the response. If an error is specified, all other properties will be ignored and the 
     /// response will be processed using the error.
-    var error: Error { get }
+    var error: Error? { get }
     // TODO: Should we have an error type, or use an enum to distinguish between possible response types?
 
     // TODO: Update this comment for Swfit syntax
