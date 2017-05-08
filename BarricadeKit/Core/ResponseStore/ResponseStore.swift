@@ -26,6 +26,8 @@ public protocol ResponseStore {
     func selectCurrentResponse(in set: ResponseSet, named: String)
     
     func unregister(set: ResponseSet)
+    
+    func canRespond(to request: URLRequest) -> Bool
 }
 
 
@@ -63,6 +65,11 @@ public class InMemoryResponseStore: ResponseStore {
     public func unregister(set: ResponseSet) {
         guard let index = responseSets.index(where: { $0.requestName == set.requestName }) else { return }
         responseSets.remove(at: index)
+    }
+
+    public func canRespond(to request: URLRequest) -> Bool {
+        guard let set = responseSet(for: request) else { return false }
+        return currentResponse(for: set) != nil
     }
 
     

@@ -22,7 +22,7 @@ class ResponseSetTests: XCTestCase {
         
         set.add(response: StandardNetworkResponse(name: "response1", statusCode: 200, contentType: ContentType.textPlain))
         set.add(response: StandardNetworkResponse(name: "response2", statusCode: 200, contentType: ContentType.textPlain))
-        set.add(response: StandardErrorResponse(name: "error", error: BarricadeError.offline))
+        set.add(response: StandardErrorResponse(name: "error", error: BarricadeError.unknown))
         
         XCTAssertEqual(set.allResponses.count, 3)
     }
@@ -31,7 +31,7 @@ class ResponseSetTests: XCTestCase {
         var set = ResponseSet(requestName: "Demo", evaluation: .always())
         set.add(response: StandardNetworkResponse(name: "response1", statusCode: 200, contentType: ContentType.textPlain))
         set.add(response: StandardNetworkResponse(name: "response2", statusCode: 200, contentType: ContentType.textPlain))
-        set.add(response: StandardErrorResponse(name: "error", error: BarricadeError.offline))
+        set.add(response: StandardErrorResponse(name: "error", error: BarricadeError.unknown))
 
         XCTAssertNil(set.response(named: "name"))
     }
@@ -40,7 +40,7 @@ class ResponseSetTests: XCTestCase {
         var set = ResponseSet(requestName: "Demo", evaluation: .always())
         set.add(response: StandardNetworkResponse(name: "response1", statusCode: 200, contentType: ContentType.textPlain))
         set.add(response: StandardNetworkResponse(name: "response2", statusCode: 200, contentType: ContentType.textPlain))
-        set.add(response: StandardErrorResponse(name: "error", error: BarricadeError.offline))
+        set.add(response: StandardErrorResponse(name: "error", error: BarricadeError.unknown))
         
         let response = set.response(named: "response1")!
         switch response {
@@ -55,7 +55,7 @@ class ResponseSetTests: XCTestCase {
         var set = ResponseSet(requestName: "Demo", evaluation: .always())
         set.add(response: StandardNetworkResponse(name: "response1", statusCode: 200, contentType: ContentType.textPlain))
         set.add(response: StandardNetworkResponse(name: "response2", statusCode: 200, contentType: ContentType.textPlain))
-        set.add(response: StandardErrorResponse(name: "error", error: BarricadeError.offline))
+        set.add(response: StandardErrorResponse(name: "error", error: BarricadeError.unknown))
         
         let response = set.response(named: "error")!
         switch response {

@@ -55,3 +55,12 @@ public protocol NetworkResponse {
      */
     func modifiedResponse(for: URLRequest) -> NetworkResponse
 }
+
+
+extension NetworkResponse {
+    
+    func urlResponse(for request: URLRequest) -> URLResponse? {
+        guard let url = request.url else { return nil }
+        return HTTPURLResponse(url: url, statusCode: statusCode, httpVersion: nil, headerFields: allHeaderFields)
+    }
+}
