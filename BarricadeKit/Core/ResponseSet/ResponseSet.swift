@@ -9,29 +9,6 @@
 import Foundation
 
 
-public struct ResponseSetEvaluation {
-    
-    public static func suffix(_ suffix: String) -> ResponseSetEvaluation {
-        return ResponseSetEvaluation { _, components -> Bool in
-            return components.path.hasSuffix(suffix)
-        }
-    }
-
-    public static func closure(_ evaluation: @escaping Evaluation) -> ResponseSetEvaluation {
-        return ResponseSetEvaluation { request, components -> Bool in
-            return evaluation(request, components)
-        }
-    }
-
-    public typealias Evaluation = (URLRequest, URLComponents) -> Bool
-    private var internalClosure: Evaluation
-    
-    func evaluate(request: URLRequest, components: URLComponents) -> Bool {
-        return internalClosure(request, components)
-    }
-}
-
-
 public struct ResponseSet {
         
     public var requestName: String
@@ -46,10 +23,14 @@ public struct ResponseSet {
         self.evaluation = evaluation
     }
     
-    public func add(response: Response) {
-        // TODO: Implement
+    public mutating func add(response: NetworkResponse) {
+        allResponses.append(.network(response))
     }
-    
+
+    public mutating func add(response: ErrorResponse) {
+        allResponses.append(.error(response))
+    }
+
     public func createResponse(responseGenerator: ()->(Response)) {
         // TODO: Implement
     }
@@ -59,20 +40,26 @@ public struct ResponseSet {
     }
     
     public func response(named: String) -> Response? {
-        // TODO: Implement
-        return nil
+        return allResponses.first(where: { response -> Bool in
+            switch response {
+            case .network(let network):
+                return network.name == named
+            case .error(let error):
+                return error.name == named
+            }
+        })
     }
 }
 
 
 extension ResponseSet {
     
-    public func add(named: String, file: String, statusCode: Int, contentType: String) -> Response {
+    public func add(named: String, file: String, statusCode: Int, contentType: String) -> NetworkResponse {
         // TODO: Implement
         return MockResponse()
     }
     
-    public func addJSON(named: String, file: String, statusCode: Int = 200) -> Response {
+    public func addJSON(named: String, file: String, statusCode: Int = 200) -> NetworkResponse {
         // TODO: Implement
         return MockResponse()
     }
@@ -83,14 +70,14 @@ extension ResponseSet {
 }
 
 
-private struct MockResponse: Response {
+private struct MockResponse: NetworkResponse {
     
     var name: String = "Mock"
     var statusCode: Int = 200
     var content: Data? = nil
     var allHeaderFields: [String : String] = [:]
     var error: Error? = nil
-    func modifiedResponse(for: URLRequest) -> Response {
+    func modifiedResponse(for: URLRequest) -> NetworkResponse {
         return self
     }
 }

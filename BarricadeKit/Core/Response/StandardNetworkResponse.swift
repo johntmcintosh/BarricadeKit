@@ -1,5 +1,5 @@
 //
-//  StandardResponse.swift
+//  StandardNetworkResponse.swift
 //  Barricade
 //
 //  Created by John McIntosh on 5/8/17.
@@ -9,7 +9,7 @@
 import Foundation
 
 
-public struct StandardResponse: Response {
+public struct StandardNetworkResponse: NetworkResponse {
 
     // MARK: Response
     
@@ -24,7 +24,7 @@ public struct StandardResponse: Response {
         }
     }
 
-    public func modifiedResponse(for: URLRequest) -> Response {
+    public func modifiedResponse(for: URLRequest) -> NetworkResponse {
         return self
     }
     

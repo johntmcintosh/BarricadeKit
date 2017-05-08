@@ -1,5 +1,5 @@
 //
-//  BarricadeResult.swift
+//  ErrorResponse.swift
 //  Barricade
 //
 //  Created by John McIntosh on 5/8/17.
@@ -9,7 +9,8 @@
 import Foundation
 
 
-enum BarricadeResult {
-    case response(Response)
-    case error(Error)
+public protocol ErrorResponse {
+    
+    var name: String { get }
+    var error: Error { get }
 }
