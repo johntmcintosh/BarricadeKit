@@ -20,6 +20,7 @@
 		5B7DC4F11EC0E0EF00FCDA3A /* StandardErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DC4F01EC0E0EF00FCDA3A /* StandardErrorResponse.swift */; };
 		5B7DC4F31EC0E25800FCDA3A /* ResponseSetEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DC4F21EC0E25800FCDA3A /* ResponseSetEvaluation.swift */; };
 		5B7DC4F51EC0E2B700FCDA3A /* ResponseSetEvaluationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DC4F41EC0E2B700FCDA3A /* ResponseSetEvaluationTests.swift */; };
+		5B7DC4F71EC0E4C800FCDA3A /* InMemoryResponseStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DC4F61EC0E4C800FCDA3A /* InMemoryResponseStoreTests.swift */; };
 		5B9E8E851EBCF7D4002A85B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8E841EBCF7D4002A85B5 /* AppDelegate.swift */; };
 		5B9E8E871EBCF7D4002A85B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8E861EBCF7D4002A85B5 /* ViewController.swift */; };
 		5B9E8E8A1EBCF7D4002A85B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9E8E881EBCF7D4002A85B5 /* Main.storyboard */; };
@@ -93,6 +94,7 @@
 		5B7DC4F01EC0E0EF00FCDA3A /* StandardErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardErrorResponse.swift; sourceTree = "<group>"; };
 		5B7DC4F21EC0E25800FCDA3A /* ResponseSetEvaluation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSetEvaluation.swift; sourceTree = "<group>"; };
 		5B7DC4F41EC0E2B700FCDA3A /* ResponseSetEvaluationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSetEvaluationTests.swift; sourceTree = "<group>"; };
+		5B7DC4F61EC0E4C800FCDA3A /* InMemoryResponseStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryResponseStoreTests.swift; sourceTree = "<group>"; };
 		5B9E8E811EBCF7D4002A85B5 /* Barricade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Barricade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9E8E841EBCF7D4002A85B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B9E8E861EBCF7D4002A85B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				5B9E8EDE1EBD072F002A85B5 /* ResponseStore.swift */,
+				5B7DC4F61EC0E4C800FCDA3A /* InMemoryResponseStoreTests.swift */,
 			);
 			path = ResponseStore;
 			sourceTree = "<group>";
@@ -616,6 +619,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B7DC4F71EC0E4C800FCDA3A /* InMemoryResponseStoreTests.swift in Sources */,
 				5B7DC4E91EC0D92C00FCDA3A /* ResponseSetTests.swift in Sources */,
 				5B9E8EC81EBD06C1002A85B5 /* BarricadeKitTests.swift in Sources */,
 				5B7DC4F51EC0E2B700FCDA3A /* ResponseSetEvaluationTests.swift in Sources */,

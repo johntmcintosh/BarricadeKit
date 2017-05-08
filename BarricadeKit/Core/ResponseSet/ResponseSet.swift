@@ -15,7 +15,7 @@ public struct ResponseSet {
     
     public private(set) var allResponses: [Response]
     
-    public var evaluation: ResponseSetEvaluation
+    private var evaluation: ResponseSetEvaluation
 
     public init(requestName: String, evaluation: ResponseSetEvaluation) {
         self.requestName = requestName
@@ -31,14 +31,6 @@ public struct ResponseSet {
         allResponses.append(.error(response))
     }
 
-    public func createResponse(responseGenerator: ()->(Response)) {
-        // TODO: Implement
-    }
-    
-    public func createResponse(name: String, hook: (Response) -> ()) {
-        // TODO: Implement
-    }
-    
     public func response(named: String) -> Response? {
         return allResponses.first(where: { response -> Bool in
             switch response {
@@ -49,10 +41,26 @@ public struct ResponseSet {
             }
         })
     }
+    
+    public func responds(to request: URLRequest, components: URLComponents) -> Bool {
+        return evaluation.evaluate(request: request, components: components)
+    }
+    
+    public var defaultResponse: Response? {
+        return allResponses.first
+    }
 }
 
 
 extension ResponseSet {
+    
+    public func createResponse(responseGenerator: ()->(Response)) {
+        // TODO: Implement
+    }
+    
+    public func createResponse(name: String, hook: (Response) -> ()) {
+        // TODO: Implement
+    }
     
     public func add(named: String, file: String, statusCode: Int, contentType: String) -> NetworkResponse {
         // TODO: Implement

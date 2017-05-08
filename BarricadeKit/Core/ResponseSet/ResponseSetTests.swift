@@ -65,6 +65,20 @@ class ResponseSetTests: XCTestCase {
             XCTFail()
         }
     }
+    
+    func testDefaultResponseIsFirstRegisteredResponse() {
+        var set = ResponseSet(requestName: "Demo", evaluation: .always())
+        set.add(response: StandardNetworkResponse(name: "response1", statusCode: 200, contentType: ContentType.textPlain))
+        set.add(response: StandardNetworkResponse(name: "response2", statusCode: 200, contentType: ContentType.textPlain))
+        
+        let response = set.defaultResponse!
+        switch response {
+        case .network(let networkResponse):
+            XCTAssertEqual(networkResponse.name, "response1")
+        default:
+            XCTFail()
+        }
+    }
 }
 
 
