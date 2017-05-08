@@ -88,9 +88,9 @@ private struct MockResponse: Response {
     var name: String = "Mock"
     var statusCode: Int = 200
     var content: Data? = nil
-    var allHeaderFields: [String : Any] = [:]
+    var allHeaderFields: [String : String] = [:]
     var error: Error? = nil
-    func response(for: URLRequest) -> Response {
+    func modifiedResponse(for: URLRequest) -> Response {
         return self
     }
 }

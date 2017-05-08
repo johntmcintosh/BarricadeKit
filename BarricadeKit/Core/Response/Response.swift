@@ -31,13 +31,8 @@ public protocol Response {
     var content: Data? { get }
     
     /// A dictionary containing all the HTTP header fields in the response.
-    var allHeaderFields: [String: Any] { get }
+    var allHeaderFields: [String: String] { get }
     
-    /// An error representing the response. If an error is specified, all other properties will be ignored and the 
-    /// response will be processed using the error.
-    var error: Error? { get }
-    // TODO: Should we have an error type, or use an enum to distinguish between possible response types?
-
     // TODO: Update this comment for Swfit syntax
     /**
      MMBarricade will call this method on a Response object and will use its return value for populating
@@ -58,5 +53,5 @@ public protocol Response {
      set the `date` field of a JSON property in the response so that it is always today's date, whereas
      if the response is simply returning a static JSON  file, the date would not dynamically change.
      */
-    func response(for: URLRequest) -> Response
+    func modifiedResponse(for: URLRequest) -> Response
 }
