@@ -33,20 +33,10 @@ public protocol NetworkResponse {
     /// A dictionary containing all the HTTP header fields in the response.
     var allHeaderFields: [String: String] { get }
     
-    // TODO: Update this comment for Swfit syntax
     /**
-     MMBarricade will call this method on a Response object and will use its return value for populating
+     Barricade will call this method on a NetworkResponse object and will use its return value for populating
      the network response that is returned from the barricade. Simple implementations of this protocol
-     can implement this method to just return a copy of the existing request:
-     
-     ```
-     - (id<MMBarricadeResponse>(^)(NSURLRequest *))responseForRequest {
-     id<MMBarricadeResponse>(^responseBlock)(NSURLRequest *) = ^id<MMBarricadeResponse>(NSURLRequest *request) {
-     return [self copy];
-     };
-     return responseBlock;
-     }
-     ```
+     can implement this method to just return a copy of the existing request.
      
      More advanced implementations of the protocol could implement this method as a hook to inject dynamic
      data into the response object before returning it to the called. For example, this could be used to
