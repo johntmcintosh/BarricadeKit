@@ -1,6 +1,7 @@
 platform :ios, '9.0'
 
 target :Barricade do
+    pod 'Sourcery', '0.6.0'
     target :BarricadeTests do
     end
 end

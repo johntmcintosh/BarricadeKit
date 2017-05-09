@@ -71,10 +71,28 @@ class BarricadeTests: XCTestCase {
     
     func testNoResponseRegistered() {
         let completionExpectation = expectation(description: "request completed")
-        let task = URLSession.shared.dataTask(with: URL(string: "http://example.com")!) { data, urlResponse, error in
+        let urlRequest = URLRequest(url: URL(string: "http://example.com")!)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, urlResponse, error in
             
             let barricadeError = error as! BarricadeError
-            //XCTAssertTrue(barricadeError is BarricadeError.noResponseRegistered)
+            XCTAssertEqual(barricadeError, BarricadeError.noResponseRegistered(urlRequest))
+            XCTAssertNil(data)
+            completionExpectation.fulfill()
+        }
+        task.resume()
+        waitForExpectations(timeout: 2.0, handler: nil)
+    }
+    
+    func testErrorRegistered() {
+        Barricade.register(set: .make())
+        Barricade.selectResponse(for: "login", with: "error")
+        
+        let completionExpectation = expectation(description: "request completed")
+        let urlRequest = URLRequest(url: URL(string: "http://example.com")!)
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, urlResponse, error in
+            
+            let barricadeError = error as! BarricadeError
+            XCTAssertEqual(barricadeError, BarricadeError.unknown)
             XCTAssertNil(data)
             completionExpectation.fulfill()
         }
@@ -87,9 +105,14 @@ private extension ResponseSet {
     
     static func make() -> ResponseSet {
         var set = ResponseSet(requestName: "login", evaluation: .always())
+        
         var response = StandardNetworkResponse(name: "success", statusCode: 200, contentType: ContentType.textPlain)
         response.contentString = "response body"
         set.add(response: response)
+        
+        let error = StandardErrorResponse(name: "error", error: BarricadeError.unknown)
+        set.add(response: error)
+        
         return set
     }
 }

@@ -21,6 +21,8 @@
 		5B7DC5001EC2244500FCDA3A /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DC4FD1EC2244500FCDA3A /* ContentType.swift */; };
 		5B7DC5011EC2244500FCDA3A /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DC4FE1EC2244500FCDA3A /* Errors.swift */; };
 		5B7DC5021EC2244500FCDA3A /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DC4FF1EC2244500FCDA3A /* Header.swift */; };
+		5B7DC5091EC2315800FCDA3A /* AutoEquatable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DC5061EC2315800FCDA3A /* AutoEquatable.generated.swift */; };
+		5B7DC50D1EC231A000FCDA3A /* AutoEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DC50C1EC231A000FCDA3A /* AutoEquatable.swift */; };
 		5B9E8E851EBCF7D4002A85B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8E841EBCF7D4002A85B5 /* AppDelegate.swift */; };
 		5B9E8E871EBCF7D4002A85B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8E861EBCF7D4002A85B5 /* ViewController.swift */; };
 		5B9E8E8A1EBCF7D4002A85B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9E8E881EBCF7D4002A85B5 /* Main.storyboard */; };
@@ -95,6 +97,9 @@
 		5B7DC4FD1EC2244500FCDA3A /* ContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		5B7DC4FE1EC2244500FCDA3A /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		5B7DC4FF1EC2244500FCDA3A /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		5B7DC5061EC2315800FCDA3A /* AutoEquatable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoEquatable.generated.swift; sourceTree = "<group>"; };
+		5B7DC5081EC2315800FCDA3A /* AutoEquatable.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoEquatable.stencil; sourceTree = "<group>"; };
+		5B7DC50C1EC231A000FCDA3A /* AutoEquatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoEquatable.swift; sourceTree = "<group>"; };
 		5B9E8E811EBCF7D4002A85B5 /* Barricade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Barricade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9E8E841EBCF7D4002A85B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B9E8E861EBCF7D4002A85B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +171,40 @@
 				5B7DC4FF1EC2244500FCDA3A /* Header.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		5B7DC5041EC2315800FCDA3A /* Sourcery */ = {
+			isa = PBXGroup;
+			children = (
+				5B7DC5051EC2315800FCDA3A /* Generated */,
+				5B7DC50B1EC231A000FCDA3A /* Stubs */,
+				5B7DC5071EC2315800FCDA3A /* Templates */,
+			);
+			path = Sourcery;
+			sourceTree = "<group>";
+		};
+		5B7DC5051EC2315800FCDA3A /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				5B7DC5061EC2315800FCDA3A /* AutoEquatable.generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		5B7DC5071EC2315800FCDA3A /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				5B7DC5081EC2315800FCDA3A /* AutoEquatable.stencil */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		5B7DC50B1EC231A000FCDA3A /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				5B7DC50C1EC231A000FCDA3A /* AutoEquatable.swift */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 		5B9E8E781EBCF7D4002A85B5 = {
@@ -249,6 +288,7 @@
 				5B9E8ED81EBD072F002A85B5 /* Barricade.swift */,
 				5B7DC4FA1EC1213300FCDA3A /* BarricadeTests.swift */,
 				5B7DC4FC1EC2244500FCDA3A /* Common */,
+				5B7DC5041EC2315800FCDA3A /* Sourcery */,
 				5B9E8ED91EBD072F002A85B5 /* Response */,
 				5B9E8EDB1EBD072F002A85B5 /* ResponseSet */,
 				5B9E8EDD1EBD072F002A85B5 /* ResponseStore */,
@@ -371,6 +411,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B9E8ECF1EBD06C1002A85B5 /* Build configuration list for PBXNativeTarget "BarricadeKit" */;
 			buildPhases = (
+				5B7DC5031EC22FB600FCDA3A /* Run Script - Sourcery */,
 				5B9E8EB31EBD06C1002A85B5 /* Sources */,
 				5B9E8EB41EBD06C1002A85B5 /* Frameworks */,
 				5B9E8EB51EBD06C1002A85B5 /* Headers */,
@@ -537,6 +578,20 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		5B7DC5031EC22FB600FCDA3A /* Run Script - Sourcery */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - Sourcery";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$SRCROOT/Pods/Sourcery/bin/sourcery --sources \"${SRCROOT}/../BarricadeKit/Core\" --templates \"${SRCROOT}/../BarricadeKit/Core/Sourcery/Templates\" --output \"${SRCROOT}/../BarricadeKit/Core/Sourcery/Generated\"";
+		};
 		9FC4F12759C3A47EA803E503 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -606,6 +661,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B7DC50D1EC231A000FCDA3A /* AutoEquatable.swift in Sources */,
 				5B7DC5021EC2244500FCDA3A /* Header.swift in Sources */,
 				5B11E8B81EC0C3660011832A /* Response.swift in Sources */,
 				5B7DC5011EC2244500FCDA3A /* Errors.swift in Sources */,
@@ -618,6 +674,7 @@
 				5B7DC4F11EC0E0EF00FCDA3A /* StandardErrorResponse.swift in Sources */,
 				5B7DC5001EC2244500FCDA3A /* ContentType.swift in Sources */,
 				5B9E8EE21EBD072F002A85B5 /* ResponseStore.swift in Sources */,
+				5B7DC5091EC2315800FCDA3A /* AutoEquatable.generated.swift in Sources */,
 				5B9E8EDF1EBD072F002A85B5 /* Barricade.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

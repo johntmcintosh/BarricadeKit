@@ -80,11 +80,20 @@
 			path = "Target Support Files/Pods-Barricade-BarricadeTests";
 			sourceTree = "<group>";
 		};
+		46210C7AA8EC26F0EC63D670F5F9E613 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B8E5896440EE20E95B9C00A8E8829FB /* Sourcery */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				46210C7AA8EC26F0EC63D670F5F9E613 /* Pods */,
 				E565F8E21626D25F0A42CD21E8546E35 /* Products */,
 				C557149BF410EF10B22C5E848DDEC9D1 /* Targets Support Files */,
 			);
@@ -106,6 +115,14 @@
 			);
 			name = "Pods-Barricade";
 			path = "Target Support Files/Pods-Barricade";
+			sourceTree = "<group>";
+		};
+		9B8E5896440EE20E95B9C00A8E8829FB /* Sourcery */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Sourcery;
+			path = Sourcery;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
