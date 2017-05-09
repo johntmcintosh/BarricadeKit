@@ -20,13 +20,28 @@
                ReferencedContainer = "container:Barricade.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5B9E8EBF1EBD06C1002A85B5"
+               BuildableName = "BarricadeKitTests.xctest"
+               BlueprintName = "BarricadeKitTests"
+               ReferencedContainer = "container:Barricade.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -35,6 +50,16 @@
                BlueprintIdentifier = "5B9E8E941EBCF7D4002A85B5"
                BuildableName = "BarricadeTests.xctest"
                BlueprintName = "BarricadeTests"
+               ReferencedContainer = "container:Barricade.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5B9E8EBF1EBD06C1002A85B5"
+               BuildableName = "BarricadeKitTests.xctest"
+               BlueprintName = "BarricadeKitTests"
                ReferencedContainer = "container:Barricade.xcodeproj">
             </BuildableReference>
          </TestableReference>

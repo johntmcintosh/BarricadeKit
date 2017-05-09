@@ -19,7 +19,9 @@ public struct StandardNetworkResponse: NetworkResponse {
     public var allHeaderFields: [String : String] {
         get {
             var headers = customHeaderFields
-            headers[Header.contentType] = contentType
+            if let type = contentType {
+                headers[Header.contentType] = type
+            }
             return headers
         }
     }
@@ -32,7 +34,7 @@ public struct StandardNetworkResponse: NetworkResponse {
     // MARK: Custom
     
     public var customHeaderFields: [String : String] = [:]
-    public var contentType: String
+    public var contentType: String?
     public var contentString: String? {
         get {
             guard let data = content else { return nil }
@@ -45,7 +47,7 @@ public struct StandardNetworkResponse: NetworkResponse {
     
     // MARK: Initializers
     
-    public init(name: String, statusCode: Int, contentType: String) {
+    public init(name: String, statusCode: Int, contentType: String? = nil) {
         self.name = name
         self.statusCode = statusCode
         self.contentType = contentType

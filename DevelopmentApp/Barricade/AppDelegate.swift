@@ -21,7 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Barricade.enableForDefaultSession()
 
+        Barricade.register(set: .createdManually())
         
+        return true
+    }
+}
+
+
+extension ResponseSet {
+    
+    static func createdManually() -> ResponseSet {
         var set = ResponseSet(requestName: "login", evaluation: .always())
         
         var response = StandardNetworkResponse(name: "success", statusCode: 200, contentType: ContentType.textPlain)
@@ -31,8 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let error = StandardErrorResponse(name: "error", error: BarricadeError.unknown)
         set.add(response: error)
         
-        Barricade.register(set: set)
-        
-        return true
+        return set
     }
 }
