@@ -21,16 +21,24 @@ open class Barricade: URLProtocol {
         setup(with: InMemoryResponseStore())
     }
     
+    public static func enableForDefaultSession() {
+        URLProtocol.registerClass(self)
+    }
+    
     public static func enable(for sessionConfiguration: URLSessionConfiguration) {
         if responseStore == nil {
             setupWithInMemoreResponseStore()
         }
-
+        
         var protocolClasses = sessionConfiguration.protocolClasses ?? []
         if !protocolClasses.contains(where: { $0 == type(of: self) }) {
             protocolClasses.insert(self, at: 0)
         }
         sessionConfiguration.protocolClasses = protocolClasses
+    }
+    
+    public static func disableForDefaultSession() {
+        URLProtocol.unregisterClass(self)
     }
 
     public static func disable(for sessionConfiguration: URLSessionConfiguration) {
@@ -63,6 +71,12 @@ open class Barricade: URLProtocol {
     
     public static func resetSelections() {
         responseStore.resetSelections()
+    }
+    
+    public static func unregisterAll() {
+        for set in responseStore.responseSets {
+            responseStore.unregister(set: set)
+        }
     }
     
     
