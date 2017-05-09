@@ -22,6 +22,10 @@ open class Barricade: URLProtocol {
     }
     
     public static func enableForDefaultSession() {
+        if responseStore == nil {
+            setupWithInMemoreResponseStore()
+        }
+
         URLProtocol.registerClass(self)
     }
     

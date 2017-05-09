@@ -27,7 +27,7 @@ fileprivate func compareArrays<T>(lhs: [T], rhs: [T], compare: (_ lhs: T, _ rhs:
 // MARK: - AutoEquatable for Enums
 // MARK: - BarricadeError AutoEquatable
 extension BarricadeError: Equatable {}
-internal func == (lhs: BarricadeError, rhs: BarricadeError) -> Bool {
+public func == (lhs: BarricadeError, rhs: BarricadeError) -> Bool {
     switch (lhs, rhs) {
     case (.noResponseRegistered(let lhs), .noResponseRegistered(let rhs)): 
         return lhs == rhs

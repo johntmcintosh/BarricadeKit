@@ -26,6 +26,12 @@ public struct ResponseSetEvaluation {
 
 extension ResponseSetEvaluation {
     
+    public static func always() -> ResponseSetEvaluation {
+        return ResponseSetEvaluation { _, _ -> Bool in
+            return true
+        }
+    }
+
     public static func suffix(_ suffix: String) -> ResponseSetEvaluation {
         return ResponseSetEvaluation { _, components -> Bool in
             return components.path.hasSuffix(suffix)

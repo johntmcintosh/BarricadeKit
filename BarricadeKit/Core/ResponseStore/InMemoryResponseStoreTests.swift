@@ -54,12 +54,7 @@ class InMemoryResponseStoreTests: XCTestCase {
         responseStore.register(set: .makeSetA())
         
         let response = responseStore.currentResponse(for: .makeSetA())!
-        switch response {
-        case .network(let network):
-            XCTAssertEqual(network.name, "success")
-        default:
-            XCTFail()
-        }
+        XCTAssertEqual(response.name, "success")
     }
     
     func testCurrentResponseCanBeUpdated() {
@@ -67,12 +62,7 @@ class InMemoryResponseStoreTests: XCTestCase {
         responseStore.selectCurrentResponse(in: .makeSetA(), named: "failure")
         
         let response = responseStore.currentResponse(for: .makeSetA())!
-        switch response {
-        case .network(let network):
-            XCTAssertEqual(network.name, "failure")
-        default:
-            XCTFail()
-        }
+        XCTAssertEqual(response.name, "failure")
     }
     
     func testCurrentResponseCanBeResetToDefault() {
@@ -81,12 +71,7 @@ class InMemoryResponseStoreTests: XCTestCase {
         responseStore.resetSelections()
         
         let response = responseStore.currentResponse(for: .makeSetA())!
-        switch response {
-        case .network(let network):
-            XCTAssertEqual(network.name, "success")
-        default:
-            XCTFail()
-        }
+        XCTAssertEqual(response.name, "success")
     }
 }
 

@@ -45,7 +45,7 @@ public struct StandardNetworkResponse: NetworkResponse {
     
     // MARK: Initializers
     
-    init(name: String, statusCode: Int, contentType: String) {
+    public init(name: String, statusCode: Int, contentType: String) {
         self.name = name
         self.statusCode = statusCode
         self.contentType = contentType

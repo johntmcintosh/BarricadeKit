@@ -33,12 +33,7 @@ public struct ResponseSet {
 
     public func response(named: String) -> Response? {
         return allResponses.first(where: { response -> Bool in
-            switch response {
-            case .network(let network):
-                return network.name == named
-            case .error(let error):
-                return error.name == named
-            }
+            return response.name == named
         })
     }
     

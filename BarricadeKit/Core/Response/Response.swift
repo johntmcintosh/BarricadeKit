@@ -13,3 +13,16 @@ public enum Response {
     case network(NetworkResponse)
     case error(ErrorResponse)
 }
+
+
+extension Response {
+    
+    public var name: String {
+        switch self {
+        case .network(let response):
+            return response.name
+        case .error(let response):
+            return response.name
+        }
+    }
+}

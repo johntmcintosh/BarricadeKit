@@ -43,12 +43,7 @@ class ResponseSetTests: XCTestCase {
         set.add(response: StandardErrorResponse(name: "error", error: BarricadeError.unknown))
         
         let response = set.response(named: "response1")!
-        switch response {
-        case .network(let networkResponse):
-            XCTAssertEqual(networkResponse.name, "response1")
-        default:
-            XCTFail()
-        }
+        XCTAssertEqual(response.name, "response1")
     }
     
     func testFetchExistingResponseByName_error() {
@@ -58,12 +53,7 @@ class ResponseSetTests: XCTestCase {
         set.add(response: StandardErrorResponse(name: "error", error: BarricadeError.unknown))
         
         let response = set.response(named: "error")!
-        switch response {
-        case .error(let errorResponse):
-            XCTAssertEqual(errorResponse.name, "error")
-        default:
-            XCTFail()
-        }
+        XCTAssertEqual(response.name, "error")
     }
     
     func testDefaultResponseIsFirstRegisteredResponse() {
@@ -72,21 +62,6 @@ class ResponseSetTests: XCTestCase {
         set.add(response: StandardNetworkResponse(name: "response2", statusCode: 200, contentType: ContentType.textPlain))
         
         let response = set.defaultResponse!
-        switch response {
-        case .network(let networkResponse):
-            XCTAssertEqual(networkResponse.name, "response1")
-        default:
-            XCTFail()
-        }
-    }
-}
-
-
-extension ResponseSetEvaluation {
-    
-    static func always() -> ResponseSetEvaluation {
-        return ResponseSetEvaluation { _, _ -> Bool in
-            return true
-        }
+        XCTAssertEqual(response.name, "response1")
     }
 }
