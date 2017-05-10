@@ -17,13 +17,13 @@ open class Barricade: URLProtocol {
         self.responseStore = responseStore
     }
     
-    public static func setupWithInMemoreResponseStore() {
+    public static func setupWithInMemoryResponseStore() {
         setup(with: InMemoryResponseStore())
     }
     
     public static func enableForDefaultSession() {
         if responseStore == nil {
-            setupWithInMemoreResponseStore()
+            setupWithInMemoryResponseStore()
         }
 
         URLProtocol.registerClass(self)
@@ -31,7 +31,7 @@ open class Barricade: URLProtocol {
     
     public static func enable(for sessionConfiguration: URLSessionConfiguration) {
         if responseStore == nil {
-            setupWithInMemoreResponseStore()
+            setupWithInMemoryResponseStore()
         }
         
         var protocolClasses = sessionConfiguration.protocolClasses ?? []
