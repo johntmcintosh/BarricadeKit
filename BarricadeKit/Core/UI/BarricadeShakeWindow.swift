@@ -29,7 +29,8 @@ public class BarricadeShakeWindow: UIWindow {
         }
         
         if !isBarricade(viewController: topViewController) {
-            let navController = BarricadeNavigationController()
+            let navController = BarricadeViewController()
+            navController.barricadeDelegate = self
             topViewController.present(navController, animated: true, completion: nil)
         }
     }
@@ -39,6 +40,14 @@ public class BarricadeShakeWindow: UIWindow {
     }
     
     func isBarricade(viewController: UIViewController) -> Bool {
-        return viewController is BarricadeNavigationController
+        return viewController is BarricadeViewController
+    }
+}
+
+
+extension BarricadeShakeWindow: BarricadeViewControllerDelegate {
+    
+    public func didSelectDone(in viewController: BarricadeViewController) {
+        viewController.dismiss(animated: true, completion: nil)
     }
 }

@@ -1,0 +1,6 @@
+framework module BarricadeKit {
+  umbrella header "BarricadeKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,10 @@
+platform :ios, '9.0'
+
+target :SwiftExample do
+    pod 'BarricadeKit', :path => '../..'
+    target :SwiftExampleTests do
+    end
+end
+
+use_frameworks!
+inhibit_all_warnings!

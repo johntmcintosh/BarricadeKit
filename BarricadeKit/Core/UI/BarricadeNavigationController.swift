@@ -1,5 +1,5 @@
 //
-//  BarricadeNavigationController.swift
+//  BarricadeViewController.swift
 //  Barricade
 //
 //  Created by John McIntosh on 5/9/17.
@@ -9,9 +9,16 @@
 import Foundation
 
 
-class BarricadeNavigationController: UINavigationController {
+public protocol BarricadeViewControllerDelegate: class {
+    func didSelectDone(in viewController: BarricadeViewController)
+}
+
+
+public class BarricadeViewController: UINavigationController {
     
-    init() {
+    public weak var barricadeDelegate: BarricadeViewControllerDelegate?
+    
+    public init() {
         super.init(nibName: nil, bundle: nil)
         
         let vc = ResponseSetViewController()
@@ -19,15 +26,15 @@ class BarricadeNavigationController: UINavigationController {
         pushViewController(vc, animated: false)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
 
-extension BarricadeNavigationController: ResponseSetViewControllerDelegate {
+extension BarricadeViewController: ResponseSetViewControllerDelegate {
     
     func didSelectDone(in viewController: ResponseSetViewController) {
-        dismiss(animated: true, completion: nil)
+        barricadeDelegate?.didSelectDone(in: self)
     }
 }
