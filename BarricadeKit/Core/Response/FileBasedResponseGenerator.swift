@@ -13,14 +13,16 @@ public struct FileBasedResponseGenerator {
     
     let contentType: String
     let directory: String
-    
-    public init(contentType: String, directory: String) {
+    let bundle: Bundle
+
+    public init(contentType: String, directory: String, bundle: Bundle = .main) {
         self.contentType = contentType
         self.directory = directory
+        self.bundle = bundle
     }
     
     public func response(named: String, file: String, statusCode: Int, headers: [String: String]? = nil) -> Response {
-        guard let url = BarricadeKit.url(for: file, in: directory) else {
+        guard let url = BarricadeKit.url(for: file, in: directory, bundle: bundle) else {
             return Response.make(name: named, error: BarricadeError.responseFileNotFound)
         }
         
