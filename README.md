@@ -1,3 +1,11 @@
+[![CocoaPods compatible](https://img.shields.io/cocoapods/v/BarricadeKit.svg)](#cocoapods)
+[![Build Status](https://travis-ci.org/johntmcintosh/BarricadeKit.svg?branch=master)](https://travis-ci.org/johntmcintosh/BarricadeKit)
+![CodeCov](https://img.shields.io/codecov/c/github/johntmcintosh/BarricadeKit.svg)
+![Swift 3.1.0](https://img.shields.io/badge/Swift-3.1.0-orange.svg)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+<!--[![CocoaPods](https://img.shields.io/cocoapods/dt/BarricadeKit.svg)]()-->
+<!--[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)-->
+
 # BarricadeKit
 
 BarricadeKit is a Swift rewrite of [MMBarricade](https://github.com/mutualmobile/mmbarricade). The feature set and APIs are similar right now, but future updates will be to BarricadeKit rather than MMBarricade.
@@ -21,7 +29,8 @@ For **unit tests and integration tests** barricade allows you to easily toggle t
 Similarly, **UI tests**, such as [KIF](https://github.com/kif-framework/KIF), can programmatically update selected responses as well, which allows your test suite to cover failure cases as well as the "happy path".
 
 ## Installing BarricadeKit
-<img src="https://cocoapod-badges.herokuapp.com/v/BarricadeKit/badge.png"/><br/>
+[![CocoaPods compatible](https://img.shields.io/cocoapods/v/BarricadeKit.svg)](#cocoapods)
+
 The easiest way to install BarricadeKit is with [CocoaPods](https://github.com/cocoapods/cocoapods):
 
 ```Ruby
