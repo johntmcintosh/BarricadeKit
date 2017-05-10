@@ -35,11 +35,20 @@ public class BarricadeShakeWindow: UIWindow {
         }
     }
     
-    var shouldPresentBarricade: Bool {
-        return true
+    public var isEnabled: Bool?
+    
+    private var shouldPresentBarricade: Bool {
+        guard let enabled = isEnabled else {
+            #if DEBUG
+                return true
+            #else
+                return false
+            #endif
+        }
+        return enabled
     }
     
-    func isBarricade(viewController: UIViewController) -> Bool {
+    private func isBarricade(viewController: UIViewController) -> Bool {
         return viewController is BarricadeViewController
     }
 }
