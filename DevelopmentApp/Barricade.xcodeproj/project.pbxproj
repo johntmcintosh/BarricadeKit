@@ -43,6 +43,7 @@
 		5B9E8EE01EBD072F002A85B5 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8EDA1EBD072F002A85B5 /* NetworkResponse.swift */; };
 		5B9E8EE11EBD072F002A85B5 /* ResponseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8EDC1EBD072F002A85B5 /* ResponseSet.swift */; };
 		5B9E8EE21EBD072F002A85B5 /* ResponseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8EDE1EBD072F002A85B5 /* ResponseStore.swift */; };
+		5BB019981EC37336001D97FC /* BarricadeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB019971EC37336001D97FC /* BarricadeKit.swift */; };
 		98ECB0DB8A713AEB0D66C624 /* Pods_Barricade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F1013CA6C3A97D062D2195 /* Pods_Barricade.framework */; };
 		DA6CD1FE1B60DB5A933DB304 /* Pods_Barricade_BarricadeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92BB8569C7684542BB586DE /* Pods_Barricade_BarricadeTests.framework */; };
 /* End PBXBuildFile section */
@@ -131,6 +132,7 @@
 		5B9E8EDA1EBD072F002A85B5 /* NetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
 		5B9E8EDC1EBD072F002A85B5 /* ResponseSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSet.swift; sourceTree = "<group>"; };
 		5B9E8EDE1EBD072F002A85B5 /* ResponseStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseStore.swift; sourceTree = "<group>"; };
+		5BB019971EC37336001D97FC /* BarricadeKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarricadeKit.swift; sourceTree = "<group>"; };
 		D696C9CD8CAED1058FB9CF32 /* Pods-Barricade.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barricade.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Barricade/Pods-Barricade.debug.xcconfig"; sourceTree = "<group>"; };
 		D92BB8569C7684542BB586DE /* Pods_Barricade_BarricadeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Barricade_BarricadeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E9E1F964F3EB91D8FE6DE8 /* Pods-Barricade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Barricade.release.xcconfig"; path = "Pods/Target Support Files/Pods-Barricade/Pods-Barricade.release.xcconfig"; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 			children = (
 				5B9E8ED81EBD072F002A85B5 /* Barricade.swift */,
 				5B7DC4FA1EC1213300FCDA3A /* BarricadeTests.swift */,
+				5BB019971EC37336001D97FC /* BarricadeKit.swift */,
 				5B7DC4FC1EC2244500FCDA3A /* Common */,
 				5B7DC5041EC2315800FCDA3A /* Sourcery */,
 				5B9E8ED91EBD072F002A85B5 /* Response */,
@@ -689,6 +692,7 @@
 				5B7DC5141EC2438700FCDA3A /* ResponseSetViewController.swift in Sources */,
 				5B11E8B81EC0C3660011832A /* Response.swift in Sources */,
 				5B7DC5011EC2244500FCDA3A /* BarricadeError.swift in Sources */,
+				5BB019981EC37336001D97FC /* BarricadeKit.swift in Sources */,
 				5B7DC4E71EC0D6DB00FCDA3A /* Response+Convenience.swift in Sources */,
 				5B7DC4F31EC0E25800FCDA3A /* ResponseSetEvaluation.swift in Sources */,
 				5B7DC4EF1EC0E0C500FCDA3A /* ErrorResponse.swift in Sources */,

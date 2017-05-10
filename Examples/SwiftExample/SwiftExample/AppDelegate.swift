@@ -32,41 +32,21 @@ extension ResponseSet {
     static func createdManually() -> ResponseSet {
         var set = ResponseSet(requestName: "search", evaluation: .suffix("search/repositories"))
         
-        var response = StandardNetworkResponse(name: "success", statusCode: 200, contentType: ContentType.textPlain)
-        response.contentString = "response body"
-        set.add(response: response)
-        
-        var response2 = StandardNetworkResponse(name: "failure", statusCode: 400, contentType: ContentType.textPlain)
-        response2.contentString = "response failure"
-        set.add(response: response2)
-        
-        let error = StandardErrorResponse(name: "error", error: BarricadeError.unknown)
-        set.add(response: error)
-        
+        let successPath = BarricadeKit.url(for: "search.success.json", in: "LocalServer")!
+        let success = Response.make(name: "success", path: successPath, statusCode: 200, contentType: ContentType.applicationJson)
+        set.add(response: success)
+
+        let noResultsPath = BarricadeKit.url(for: "search.empty.json", in: "LocalServer")!
+        let noResults = Response.make(name: "no results", path: noResultsPath, statusCode: 200, contentType: ContentType.applicationJson)
+        set.add(response: noResults)
+
+        let rateLimitedPath = BarricadeKit.url(for: "search.ratelimited.json", in: "LocalServer")!
+        let headers = ["X-RateLimit-Limit": "60",
+                       "X-RateLimit-Remaining": "0",
+                       "X-RateLimit-Reset": "1377013266"]
+        let rateLimited = Response.make(name: "rate limited", path: rateLimitedPath, statusCode: 403, contentType: ContentType.applicationJson, headers: headers)
+        set.add(response: rateLimited)
+
         return set
     }
 }
-
-/*
-[responseSet addResponseWithName:@"success"
-    file:MMPathForFileInMainBundleDirectory(@"search.success.json", @"LocalServerFiles")
-    statusCode:200
-    contentType:@"application/json"];
-
-[responseSet addResponseWithName:@"no results"
-    file:MMPathForFileInMainBundleDirectory(@"search.empty.json", @"LocalServerFiles")
-    statusCode:200
-    contentType:@"application/json"];
-
-[responseSet addResponseWithName:@"rate limited"
-    file:MMPathForFileInMainBundleDirectory(@"search.ratelimited.json", @"LocalServerFiles")
-    statusCode:403
-    headers:@{
-    @"X-RateLimit-Limit": @"60",
-    @"X-RateLimit-Remaining": @"0",
-    @"X-RateLimit-Reset": @"1377013266",
-    MMBarricadeContentTypeHeaderKey: @"application/json",
-    }];
-
-[MMBarricade registerResponseSet:responseSet];
-*/

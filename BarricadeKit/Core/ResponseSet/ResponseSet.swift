@@ -22,7 +22,11 @@ public struct ResponseSet {
         self.allResponses = []
         self.evaluation = evaluation
     }
-    
+
+    public mutating func add(response: Response) {
+        allResponses.append(response)
+    }
+
     public mutating func add(response: NetworkResponse) {
         allResponses.append(.network(response))
     }
