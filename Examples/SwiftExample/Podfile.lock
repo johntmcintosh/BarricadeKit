@@ -1,7 +1,7 @@
 PODS:
-  - BarricadeKit (0.0.1):
-    - BarricadeKit/Core (= 0.0.1)
-  - BarricadeKit/Core (0.0.1)
+  - BarricadeKit (1.0.0):
+    - BarricadeKit/Core (= 1.0.0)
+  - BarricadeKit/Core (1.0.0)
 
 DEPENDENCIES:
   - BarricadeKit (from `../..`)
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: ../..
 
 SPEC CHECKSUMS:
-  BarricadeKit: 579aa6d788c3ac2d0f04e80e8f9518976963d1ed
+  BarricadeKit: 69fce56f876eaad008e4d50f183b784b223b603d
 
 PODFILE CHECKSUM: 6166951f35e1d8542396307dbc779e4fc33b43c6
 
