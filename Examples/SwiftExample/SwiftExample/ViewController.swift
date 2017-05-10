@@ -32,11 +32,21 @@ class ViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.statusCodeLabel.text = String(describing: httpResponse.statusCode)
-                self.responseHeadersTextView.text = httpResponse.allHeaderFields.description
+                self.responseHeadersTextView.text = self.outputString(from: httpResponse.allHeaderFields)
                 self.responseTextView.text = String(data: data, encoding: .utf8)
             }
         }
         task.resume()
+    }
+    
+    private func outputString(from: [AnyHashable: Any]) -> String? {
+        guard let headers = from as? [String: String] else { return nil }
+        var output = "{\n"
+        for (key, value) in headers {
+            output += "\t\(key) = \(value)\n"
+        }
+        output += "}"
+        return output
     }
 }
 

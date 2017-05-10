@@ -35,6 +35,8 @@ public func == (lhs: BarricadeError, rhs: BarricadeError) -> Bool {
          return true 
      case (.emptyFilePath, .emptyFilePath): 
          return true 
+     case (.responseFileNotFound, .responseFileNotFound): 
+         return true 
      case (.malformedJson, .malformedJson): 
          return true 
      case (.unknown, .unknown): 

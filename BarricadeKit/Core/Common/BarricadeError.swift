@@ -13,6 +13,7 @@ public enum BarricadeError: Error, AutoEquatable {
     case noResponseRegistered(URLRequest)
     case unableToGenerateUrlResponse
     case emptyFilePath
+    case responseFileNotFound
     case malformedJson
     case unknown
 }
@@ -28,6 +29,8 @@ extension BarricadeError {
             return "Unable to generate a HTTPURLResponse for the request."
         case .emptyFilePath:
             return "An empty file path was used to generate this response. Double-check that you are using a valid file path."
+        case .responseFileNotFound:
+            return "No file could be found at the provided location."
         case .malformedJson:
             return "There was an attempt to generate a response with a malformed JSON object. Double-check that your object is valid JSON."
         case .unknown:
