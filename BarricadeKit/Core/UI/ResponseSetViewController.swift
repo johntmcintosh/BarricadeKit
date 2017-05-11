@@ -9,14 +9,14 @@
 import Foundation
 
 
-protocol ResponseSetViewControllerDelegate: class {
+public protocol ResponseSetViewControllerDelegate: class {
     func didSelectDone(in viewController: ResponseSetViewController)
 }
 
 
-class ResponseSetViewController: UIViewController {
+public class ResponseSetViewController: UIViewController {
     
-    weak var delegate: ResponseSetViewControllerDelegate?
+    public weak var delegate: ResponseSetViewControllerDelegate?
     
     lazy var responseStore: ResponseStore = {
         return Barricade.responseStore
@@ -32,10 +32,12 @@ class ResponseSetViewController: UIViewController {
     
     // MARK: View Overrides
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = NSLocalizedString("Barricade", comment: "")
+
+        navigationItem.leftItemsSupplementBackButton = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(resetPressed))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donePressed))
 
@@ -44,7 +46,7 @@ class ResponseSetViewController: UIViewController {
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if let selected = tableView.indexPathForSelectedRow {
@@ -62,22 +64,26 @@ class ResponseSetViewController: UIViewController {
     }
 
     @objc private func donePressed() {
-        delegate?.didSelectDone(in: self)
+        guard let delegate = delegate else {
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+        delegate.didSelectDone(in: self)
     }
 }
 
 
 extension ResponseSetViewController: UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
          return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return responseStore.responseSets.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell") else {
                 return UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCell")
@@ -98,7 +104,7 @@ extension ResponseSetViewController: UITableViewDataSource {
 
 extension ResponseSetViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let set = responseStore.responseSets[indexPath.row]
         let vc = ResponseSelectionViewController(set: set)
         navigationController?.pushViewController(vc, animated: true)

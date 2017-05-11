@@ -34,7 +34,12 @@ public class BarricadeViewController: UINavigationController {
 
 extension BarricadeViewController: ResponseSetViewControllerDelegate {
     
-    func didSelectDone(in viewController: ResponseSetViewController) {
-        barricadeDelegate?.didSelectDone(in: self)
+    public func didSelectDone(in viewController: ResponseSetViewController) {
+        guard let barricadeDelegate = barricadeDelegate else {
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+        
+        barricadeDelegate.didSelectDone(in: self)
     }
 }
