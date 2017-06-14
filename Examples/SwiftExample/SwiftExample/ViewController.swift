@@ -18,7 +18,7 @@ class ViewController: UIViewController {
 
     
     @IBAction func presentBarricadePressed() {
-        let viewController = BarricadeViewController()
+        let viewController = BarricadeNavigationController()
         viewController.barricadeDelegate = self
         present(viewController, animated: true, completion: nil)
     }
@@ -51,9 +51,9 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController: BarricadeViewControllerDelegate {
+extension ViewController: BarricadeNavigationControllerDelegate {
 
-    func didSelectDone(in viewController: BarricadeViewController) {
+    func didSelectDone(in viewController: BarricadeNavigationController) {
         dismiss(animated: true, completion: nil)
     }
 }
