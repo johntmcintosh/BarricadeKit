@@ -42,7 +42,9 @@ public class ResponseSetViewController: UIViewController {
         self.title = NSLocalizedString("Barricade", comment: "")
 
         navigationItem.leftItemsSupplementBackButton = true
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(resetPressed))
+        if self.navigationController is BarricadeNavigationController {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(resetPressed))
+        }
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donePressed))
 
         view.addSubview(tableView)
