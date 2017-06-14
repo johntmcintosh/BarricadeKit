@@ -9,6 +9,10 @@
 import Foundation
 
 
+/// BarricadeViewController is a typealias to the top level view controller for viewing the Barricade UI.
+public typealias BarricadeViewController = ResponseSetViewController
+
+
 public protocol ResponseSetViewControllerDelegate: class {
     func didSelectDone(in viewController: ResponseSetViewController)
 }

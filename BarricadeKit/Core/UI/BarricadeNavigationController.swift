@@ -9,37 +9,6 @@
 import Foundation
 
 
-public protocol BarricadeViewControllerDelegate: class {
-    func didSelectDone(in viewController: BarricadeViewController)
-}
-
-
-public class BarricadeViewController: UINavigationController {
+public class BarricadeNavigationController: UINavigationController {
     
-    public weak var barricadeDelegate: BarricadeViewControllerDelegate?
-    
-    public init() {
-        super.init(nibName: nil, bundle: nil)
-        
-        let vc = ResponseSetViewController()
-        vc.delegate = self
-        pushViewController(vc, animated: false)
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-
-extension BarricadeViewController: ResponseSetViewControllerDelegate {
-    
-    public func didSelectDone(in viewController: ResponseSetViewController) {
-        guard let barricadeDelegate = barricadeDelegate else {
-            self.dismiss(animated: true, completion: nil)
-            return
-        }
-        
-        barricadeDelegate.didSelectDone(in: self)
-    }
 }
