@@ -1,18 +1,21 @@
 PODS:
-  - BarricadeKit (1.0.0):
-    - BarricadeKit/Core (= 1.0.0)
-  - BarricadeKit/Core (1.0.0)
+  - BarricadeKit (1.0.1):
+    - BarricadeKit/Core (= 1.0.1)
+  - BarricadeKit/Core (1.0.1)
+  - Tweaks (2.0.0)
 
 DEPENDENCIES:
   - BarricadeKit (from `../..`)
+  - Tweaks (= 2.0.0)
 
 EXTERNAL SOURCES:
   BarricadeKit:
     :path: ../..
 
 SPEC CHECKSUMS:
-  BarricadeKit: 69fce56f876eaad008e4d50f183b784b223b603d
+  BarricadeKit: 22bff01d2fc23d735538a39d29960812bef10281
+  Tweaks: 524fa47636cce3bf3a4d9156e980f10ae9480e81
 
-PODFILE CHECKSUM: 6166951f35e1d8542396307dbc779e4fc33b43c6
+PODFILE CHECKSUM: 87b292f62276ff82392502b0e6a051e776dd18f0
 
 COCOAPODS: 1.2.1

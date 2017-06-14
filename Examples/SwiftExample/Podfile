@@ -2,6 +2,7 @@ platform :ios, '9.0'
 
 target :SwiftExample do
     pod 'BarricadeKit', :path => '../..'
+    pod 'Tweaks', '2.0.0'
     target :SwiftExampleTests do
     end
 end
