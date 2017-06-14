@@ -9,19 +9,19 @@
 import Foundation
 
 
-public protocol BarricadeViewControllerDelegate: class {
-    func didSelectDone(in viewController: BarricadeViewController)
+public protocol BarricadeNavigationControllerDelegate: class {
+    func didSelectDone(in viewController: BarricadeNavigationController)
 }
 
 
-public class BarricadeViewController: UINavigationController {
+public class BarricadeNavigationController: UINavigationController {
     
-    public weak var barricadeDelegate: BarricadeViewControllerDelegate?
+    public weak var barricadeDelegate: BarricadeNavigationControllerDelegate?
     
     public init() {
         super.init(nibName: nil, bundle: nil)
         
-        let vc = ResponseSetViewController()
+        let vc = BarricadeViewController()
         vc.delegate = self
         pushViewController(vc, animated: false)
     }
@@ -32,7 +32,7 @@ public class BarricadeViewController: UINavigationController {
 }
 
 
-extension BarricadeViewController: ResponseSetViewControllerDelegate {
+extension BarricadeNavigationController: ResponseSetViewControllerDelegate {
     
     public func didSelectDone(in viewController: ResponseSetViewController) {
         guard let barricadeDelegate = barricadeDelegate else {

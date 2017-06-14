@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "BarricadeKit"
-  s.version      = "1.0.1"
+  s.version      = "1.1.0"
   s.summary      = "Framework for setting up a run-time configurable local server in iOS apps."
   s.homepage     = "https://github.com/johntmcintosh/BarricadeKit"
   s.author       = 'John T McIntosh'
