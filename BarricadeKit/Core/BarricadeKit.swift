@@ -14,7 +14,7 @@ public enum BarricadeKit { }
 
 extension BarricadeKit {
     
-    public static func url(for file: String, in directory: String, bundle: Bundle = .main) -> URL? {
+    public static func url(for file: String, in directory: String?, bundle: Bundle = .main) -> URL? {
         return bundle.url(forResource: file, withExtension: nil, subdirectory: directory)
     }
 }

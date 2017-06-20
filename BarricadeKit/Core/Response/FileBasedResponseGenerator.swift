@@ -12,10 +12,10 @@ import Foundation
 public struct FileBasedResponseGenerator {
     
     let contentType: String
-    let directory: String
+    let directory: String?
     let bundle: Bundle
 
-    public init(contentType: String, directory: String, bundle: Bundle = .main) {
+    public init(contentType: String, directory: String? = nil, bundle: Bundle = .main) {
         self.contentType = contentType
         self.directory = directory
         self.bundle = bundle
