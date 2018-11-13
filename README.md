@@ -6,7 +6,7 @@
 <!--[![CocoaPods](https://img.shields.io/cocoapods/dt/BarricadeKit.svg)]()-->
 <!--[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)-->
 
-# BarricadeKit 
+# BarricadeKit
 
 BarricadeKit is a Swift rewrite of [MMBarricade](https://github.com/mutualmobile/mmbarricade). The feature set and APIs are similar right now, but future updates will be to BarricadeKit rather than MMBarricade.
 
