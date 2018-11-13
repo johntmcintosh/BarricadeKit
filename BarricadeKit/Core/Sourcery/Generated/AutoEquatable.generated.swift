@@ -25,24 +25,5 @@ fileprivate func compareArrays<T>(lhs: [T], rhs: [T], compare: (_ lhs: T, _ rhs:
 // MARK: - AutoEquatable for classes, protocols, structs
 
 // MARK: - AutoEquatable for Enums
-// MARK: - BarricadeError AutoEquatable
-extension BarricadeError: Equatable {}
-public func == (lhs: BarricadeError, rhs: BarricadeError) -> Bool {
-    switch (lhs, rhs) {
-    case (.noResponseRegistered(let lhs), .noResponseRegistered(let rhs)): 
-        return lhs == rhs
-     case (.unableToGenerateUrlResponse, .unableToGenerateUrlResponse): 
-         return true 
-     case (.emptyFilePath, .emptyFilePath): 
-         return true 
-     case (.responseFileNotFound, .responseFileNotFound): 
-         return true 
-     case (.malformedJson, .malformedJson): 
-         return true 
-     case (.unknown, .unknown): 
-         return true 
-    default: return false
-    }
-}
 
 // MARK: -
