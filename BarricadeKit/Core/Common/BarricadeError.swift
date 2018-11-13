@@ -9,7 +9,7 @@
 import Foundation
 
 
-public enum BarricadeError: Error, AutoEquatable {
+public enum BarricadeError: Error, Equatable {
     case noResponseRegistered(URLRequest)
     case unableToGenerateUrlResponse
     case emptyFilePath

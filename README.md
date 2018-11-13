@@ -1,7 +1,7 @@
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/BarricadeKit.svg)](#cocoapods)
 [![Build Status](https://travis-ci.org/johntmcintosh/BarricadeKit.svg?branch=master)](https://travis-ci.org/johntmcintosh/BarricadeKit)
 ![CodeCov](https://img.shields.io/codecov/c/github/johntmcintosh/BarricadeKit.svg)
-![Swift 3.1.0](https://img.shields.io/badge/Swift-3.1.0-orange.svg)
+![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 <!--[![CocoaPods](https://img.shields.io/cocoapods/dt/BarricadeKit.svg)]()-->
 <!--[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)-->
@@ -34,7 +34,7 @@ Similarly, **UI tests**, such as [KIF](https://github.com/kif-framework/KIF), ca
 The easiest way to install BarricadeKit is with [CocoaPods](https://github.com/cocoapods/cocoapods):
 
 ```Ruby
-pod 'BarricadeKit', '~> 1.0.0'
+pod 'BarricadeKit', '~> 1.2.0'
 ```
 
 ## Selection Interface
@@ -79,14 +79,14 @@ Barricade.enableForDefaultSession()
 When installing through CocoaPods, you can specify particular build configurations to limit the installation of the library. For example:
 
 ```ruby
-pod 'BarricadeKit', '~> 1.0.0', :configurations => ['Debug']
+pod 'BarricadeKit', '~> 1.2.0', :configurations => ['Debug']
 ```
 
 Or, if you are only utilizing the library for unit tests, you may want to link the library with only your testing target:
 
 ```ruby
 target 'Tests', :exclusive => true do
-  pod 'BarricadeKit', '~> 1.0.0'
+  pod 'BarricadeKit', '~> 1.2.0'
 end
 ```
 ## License

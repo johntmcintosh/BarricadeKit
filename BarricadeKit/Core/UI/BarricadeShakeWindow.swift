@@ -11,7 +11,7 @@ import Foundation
 
 public class BarricadeShakeWindow: UIWindow {
     
-    override public func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
+    override public func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                 if self.shouldPresentBarricade {
