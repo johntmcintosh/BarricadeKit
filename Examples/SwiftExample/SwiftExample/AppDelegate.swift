@@ -32,7 +32,8 @@ extension ResponseSet {
     static func makeTopRepositories() -> ResponseSet {
         let generator = FileBasedResponseGenerator(contentType: ContentType.applicationJson, directory: "LocalServer")
 
-        var set = ResponseSet(requestName: "search", evaluation: .suffix("search/repositories"))
+        //var set = ResponseSet(requestName: "search", evaluation: .suffix("search/repositories"))
+        var set = ResponseSet(requestName: "search", evaluation: .contains("search/repositories"))
         set.add(response: generator.response(named: "success", file: "search.success.json", statusCode: 200))
         set.add(response: generator.response(named: "no results", file: "search.empty.json", statusCode: 200))
         set.add(response: generator.response(named: "rate limited", file: "search.ratelimited.json", statusCode: 403,
