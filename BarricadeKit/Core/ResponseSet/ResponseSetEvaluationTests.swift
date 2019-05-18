@@ -57,7 +57,7 @@ class ResponseSetEvaluationTests: XCTestCase {
     }
 
     func testContains_pass() {
-        let request = URLRequest(url: URL(string: "https://example.com/api/other-endpoint")!)
+        let request = URLRequest(url: URL(string: "https://example.com/api/endpoint")!)
         let components = URLComponents(url: request.url!, resolvingAgainstBaseURL: false)!
 
         let evaluation = ResponseSetEvaluation.contains("/api/endpoint")
