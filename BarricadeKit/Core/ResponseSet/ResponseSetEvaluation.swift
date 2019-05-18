@@ -32,6 +32,12 @@ extension ResponseSetEvaluation {
         }
     }
 
+    public static func contains(_ string: String) -> ResponseSetEvaluation {
+        return ResponseSetEvaluation(closure: { (_, components) -> Bool in
+            return components.path.contains(string)
+        })
+    }
+
     public static func suffix(_ suffix: String) -> ResponseSetEvaluation {
         return ResponseSetEvaluation { _, components -> Bool in
             return components.path.hasSuffix(suffix)

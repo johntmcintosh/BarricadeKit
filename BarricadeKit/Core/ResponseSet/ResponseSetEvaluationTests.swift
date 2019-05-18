@@ -55,4 +55,25 @@ class ResponseSetEvaluationTests: XCTestCase {
         
         XCTAssertFalse(result)
     }
+
+    func testContains_pass() {
+        let request = URLRequest(url: URL(string: "https://example.com/api/endpoint")!)
+        let components = URLComponents(url: request.url!, resolvingAgainstBaseURL: false)!
+
+        let evaluation = ResponseSetEvaluation.contains("/api/endpoint")
+        let result = evaluation.evaluate(request: request, components: components)
+
+        XCTAssertTrue(result)
+    }
+
+    func testContains_fail() {
+        let request = URLRequest(url: URL(string: "https://example.com/api/other-endpoint")!)
+        let components = URLComponents(url: request.url!, resolvingAgainstBaseURL: false)!
+
+        let evaluation = ResponseSetEvaluation.contains("/api/endpoint")
+        let result = evaluation.evaluate(request: request, components: components)
+
+        XCTAssertFalse(result)
+    }
+
 }
