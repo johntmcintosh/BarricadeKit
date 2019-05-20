@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.author       = 'John T McIntosh'
   s.license      = "MIT"
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
   s.source       = { :git => "https://github.com/johntmcintosh/BarricadeKit.git", :tag => s.version.to_s }
   s.frameworks = 'Foundation', 'CFNetwork'
   s.requires_arc = true
