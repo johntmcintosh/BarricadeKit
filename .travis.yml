@@ -1,8 +1,8 @@
 language: swift
-osx_image: xcode10.2.1
+osx_image: xcode10.2
 
 script:
-  - xcodebuild test -workspace "DevelopmentApp/Barricade.xcworkspace" -scheme "BarricadeKit" -destination 'platform=iOS Simulator,name=iPhone 8,OS=12.1'
+  - xcodebuild test -workspace "DevelopmentApp/Barricade.xcworkspace" -scheme "BarricadeKit" -destination 'platform=iOS Simulator,name=iPhone 8,OS=12.2'
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'BarricadeKit'
