@@ -63,7 +63,7 @@ public class InMemoryResponseStore: ResponseStore {
     }
     
     public func unregister(set: ResponseSet) {
-        guard let index = responseSets.index(where: { $0.requestName == set.requestName }) else { return }
+        guard let index = responseSets.firstIndex(where: { $0.requestName == set.requestName }) else { return }
         responseSets.remove(at: index)
     }
 

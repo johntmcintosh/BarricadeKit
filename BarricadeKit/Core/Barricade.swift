@@ -47,7 +47,7 @@ open class Barricade: URLProtocol {
 
     public static func disable(for sessionConfiguration: URLSessionConfiguration) {
         var protocolClasses = sessionConfiguration.protocolClasses ?? []
-        if let index = protocolClasses.index(where: { $0 == type(of: self) }) {
+        if let index = protocolClasses.firstIndex(where: { $0 == type(of: self) }) {
             protocolClasses.remove(at: index)
         }
         sessionConfiguration.protocolClasses = protocolClasses
