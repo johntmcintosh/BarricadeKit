@@ -6,7 +6,7 @@
 //  Copyright © 2017 John T McIntosh. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 /// BarricadeViewController is a typealias to the top level view controller for viewing the Barricade UI.
