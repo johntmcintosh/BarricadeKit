@@ -21,8 +21,6 @@
 		5B7DC5001EC2244500FCDA3A /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DC4FD1EC2244500FCDA3A /* ContentType.swift */; };
 		5B7DC5011EC2244500FCDA3A /* BarricadeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DC4FE1EC2244500FCDA3A /* BarricadeError.swift */; };
 		5B7DC5021EC2244500FCDA3A /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DC4FF1EC2244500FCDA3A /* Header.swift */; };
-		5B7DC5091EC2315800FCDA3A /* AutoEquatable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DC5061EC2315800FCDA3A /* AutoEquatable.generated.swift */; };
-		5B7DC50D1EC231A000FCDA3A /* AutoEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DC50C1EC231A000FCDA3A /* AutoEquatable.swift */; };
 		5B7DC50F1EC2349B00FCDA3A /* ResponseSet+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DC50E1EC2349B00FCDA3A /* ResponseSet+Convenience.swift */; };
 		5B7DC5121EC2436500FCDA3A /* ResponseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DC5111EC2436500FCDA3A /* ResponseSelectionViewController.swift */; };
 		5B7DC5141EC2438700FCDA3A /* ResponseSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DC5131EC2438700FCDA3A /* ResponseSetViewController.swift */; };
@@ -104,9 +102,6 @@
 		5B7DC4FD1EC2244500FCDA3A /* ContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		5B7DC4FE1EC2244500FCDA3A /* BarricadeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarricadeError.swift; sourceTree = "<group>"; };
 		5B7DC4FF1EC2244500FCDA3A /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
-		5B7DC5061EC2315800FCDA3A /* AutoEquatable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoEquatable.generated.swift; sourceTree = "<group>"; };
-		5B7DC5081EC2315800FCDA3A /* AutoEquatable.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoEquatable.stencil; sourceTree = "<group>"; };
-		5B7DC50C1EC231A000FCDA3A /* AutoEquatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoEquatable.swift; sourceTree = "<group>"; };
 		5B7DC50E1EC2349B00FCDA3A /* ResponseSet+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ResponseSet+Convenience.swift"; sourceTree = "<group>"; };
 		5B7DC5111EC2436500FCDA3A /* ResponseSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSelectionViewController.swift; sourceTree = "<group>"; };
 		5B7DC5131EC2438700FCDA3A /* ResponseSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSetViewController.swift; sourceTree = "<group>"; };
@@ -200,7 +195,6 @@
 		5B7DC5051EC2315800FCDA3A /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				5B7DC5061EC2315800FCDA3A /* AutoEquatable.generated.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -208,7 +202,6 @@
 		5B7DC5071EC2315800FCDA3A /* Templates */ = {
 			isa = PBXGroup;
 			children = (
-				5B7DC5081EC2315800FCDA3A /* AutoEquatable.stencil */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -216,7 +209,6 @@
 		5B7DC50B1EC231A000FCDA3A /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
-				5B7DC50C1EC231A000FCDA3A /* AutoEquatable.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -694,7 +686,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B7DC50D1EC231A000FCDA3A /* AutoEquatable.swift in Sources */,
 				5B7DC5021EC2244500FCDA3A /* Header.swift in Sources */,
 				5B7DC5141EC2438700FCDA3A /* ResponseSetViewController.swift in Sources */,
 				5B11E8B81EC0C3660011832A /* Response.swift in Sources */,
@@ -713,7 +704,6 @@
 				5B7DC50F1EC2349B00FCDA3A /* ResponseSet+Convenience.swift in Sources */,
 				5B7DC5001EC2244500FCDA3A /* ContentType.swift in Sources */,
 				5B9E8EE21EBD072F002A85B5 /* ResponseStore.swift in Sources */,
-				5B7DC5091EC2315800FCDA3A /* AutoEquatable.generated.swift in Sources */,
 				5B9E8EDF1EBD072F002A85B5 /* Barricade.swift in Sources */,
 				5B7DC5181EC2452500FCDA3A /* BarricadeNavigationController.swift in Sources */,
 			);
