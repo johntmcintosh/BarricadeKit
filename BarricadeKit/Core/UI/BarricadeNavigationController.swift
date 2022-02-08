@@ -9,7 +9,7 @@
 import UIKit
 
 
-public protocol BarricadeNavigationControllerDelegate: class {
+public protocol BarricadeNavigationControllerDelegate: AnyObject {
     func didSelectDone(in viewController: BarricadeNavigationController)
 }
 

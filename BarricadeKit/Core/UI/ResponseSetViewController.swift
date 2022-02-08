@@ -13,7 +13,7 @@ import UIKit
 public typealias BarricadeViewController = ResponseSetViewController
 
 
-public protocol ResponseSetViewControllerDelegate: class {
+public protocol ResponseSetViewControllerDelegate: AnyObject {
     func didSelectDone(in viewController: ResponseSetViewController)
 }
 
