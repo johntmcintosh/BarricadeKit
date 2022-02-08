@@ -74,8 +74,10 @@ class BarricadeTests: XCTestCase {
         let urlRequest = URLRequest(url: URL(string: "http://example.com")!)
         let task = URLSession.shared.dataTask(with: urlRequest) { data, urlResponse, error in
             
-            let barricadeError = error as! BarricadeError
-            XCTAssertEqual(barricadeError, BarricadeError.noResponseRegistered(urlRequest))
+            let error = error! as NSError
+            let expectedError = BarricadeError.noResponseRegistered(urlRequest) as NSError
+            XCTAssertEqual(error.domain, expectedError.domain)
+            XCTAssertEqual(error.code, expectedError.code)
             XCTAssertNil(data)
             completionExpectation.fulfill()
         }
@@ -91,8 +93,10 @@ class BarricadeTests: XCTestCase {
         let urlRequest = URLRequest(url: URL(string: "http://example.com")!)
         let task = URLSession.shared.dataTask(with: urlRequest) { data, urlResponse, error in
             
-            let barricadeError = error as! BarricadeError
-            XCTAssertEqual(barricadeError, BarricadeError.unknown)
+            let error = error! as NSError
+            let expectedError = BarricadeError.unknown as NSError
+            XCTAssertEqual(error.domain, expectedError.domain)
+            XCTAssertEqual(error.code, expectedError.code)
             XCTAssertNil(data)
             completionExpectation.fulfill()
         }
