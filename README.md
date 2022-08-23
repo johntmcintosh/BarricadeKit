@@ -29,6 +29,9 @@ For **unit tests and integration tests** barricade allows you to easily toggle t
 Similarly, **UI tests**, such as [KIF](https://github.com/kif-framework/KIF), can programmatically update selected responses as well, which allows your test suite to cover failure cases as well as the "happy path".
 
 ## Installing BarricadeKit
+
+**CocoaPods**
+
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/BarricadeKit.svg)](#cocoapods)
 
 The easiest way to install BarricadeKit is with [CocoaPods](https://github.com/cocoapods/cocoapods):
@@ -36,6 +39,13 @@ The easiest way to install BarricadeKit is with [CocoaPods](https://github.com/c
 ```Ruby
 pod 'BarricadeKit', '~> 2.0.0'
 ```
+
+**Swift Package Manager**
+
+* File > Swift Packages > Add Package Dependency
+* Add `https://github.com/johntmcintosh/BarricadeKit.git`
+* Select "Up to Next Major" with "2.0.0"
+
 
 ## Selection Interface
 
@@ -88,24 +98,6 @@ Or, if you are only utilizing the library for unit tests, you may want to link t
 target 'Tests', :exclusive => true do
   pod 'BarricadeKit', '~> 2.0.0'
 end
-```
-
-## Installation with Swift Package Manager (Xcode 11+)
-
-Swift Package Manager (SwiftPM) is a tool for managing the distribution of Swift code as well as C-family dependency. From Xcode 11, SwiftPM got natively integrated with Xcode.
-
-To use SwiftPM, you should use Xcode 11 and above to open your project. `Click File -> Swift Packages -> Add Package Dependency, enter BarricadeKit repo's URL.`
-
-After select the package, you can choose the dependency type `tagged version, branch or commit`. Then Xcode will setup all the stuff for you.
-
-**To add as a dependency in another framework**
-
-If you're a framework author and want to use BarricadeKit as a dependency, update your `Package.swift` file:
-
-```ruby
-dependencies: [
-    .package(url: "https://github.com/karthik-kumar-mm/BarricadeKit.git", .upToNextMajor(from: "2.0.0"))
-]
 ```
 
 ## License
