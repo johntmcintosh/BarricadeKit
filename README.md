@@ -89,6 +89,25 @@ target 'Tests', :exclusive => true do
   pod 'BarricadeKit', '~> 2.0.0'
 end
 ```
+
+## Installation with Swift Package Manager (Xcode 11+)
+
+Swift Package Manager (SwiftPM) is a tool for managing the distribution of Swift code as well as C-family dependency. From Xcode 11, SwiftPM got natively integrated with Xcode.
+
+To use SwiftPM, you should use Xcode 11 and above to open your project. `Click File -> Swift Packages -> Add Package Dependency, enter BarricadeKit repo's URL.`
+
+After select the package, you can choose the dependency type `tagged version, branch or commit`. Then Xcode will setup all the stuff for you.
+
+**To add as a dependency in another framework**
+
+If you're a framework author and want to use BarricadeKit as a dependency, update your `Package.swift` file:
+
+```ruby
+dependencies: [
+    .package(url: "https://github.com/karthik-kumar-mm/BarricadeKit.git", .upToNextMajor(from: "2.0.0"))
+]
+```
+
 ## License
 
 BarricadeKit is available under the MIT license. See the LICENSE file for more info.
