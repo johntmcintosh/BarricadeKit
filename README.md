@@ -67,7 +67,7 @@ There are two approaches you can take for presenting the selection UI:
 
 *Note: By default the shake window is presented for Debug builds only. You can manually set `BarricadeShakeWindow.isEnabled` to adjust this behavior.*
 
-- Manually present a `BarricadeViewController` at any time in your app, just be sure to limit the presetation to debug builds if you don't want it to ship to the App Store.
+- Manually present a `BarricadeViewController` at any time in your app, just be sure to limit the presentation to debug builds if you don't want it to ship to the App Store.
 
 
 ## App Store Submission
