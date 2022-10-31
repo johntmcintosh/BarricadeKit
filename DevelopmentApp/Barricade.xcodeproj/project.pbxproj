@@ -36,6 +36,8 @@
 		5B9E8EE01EBD072F002A85B5 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8EDA1EBD072F002A85B5 /* NetworkResponse.swift */; };
 		5B9E8EE11EBD072F002A85B5 /* ResponseSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8EDC1EBD072F002A85B5 /* ResponseSet.swift */; };
 		5B9E8EE21EBD072F002A85B5 /* ResponseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E8EDE1EBD072F002A85B5 /* ResponseStore.swift */; };
+		5BAD198C29101C8700C37D93 /* SimulatedSystemError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD198B29101C8700C37D93 /* SimulatedSystemError.swift */; };
+		5BAD198E291021E500C37D93 /* SimulatedSystemErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD198D291021E500C37D93 /* SimulatedSystemErrorResponse.swift */; };
 		5BB019981EC37336001D97FC /* BarricadeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB019971EC37336001D97FC /* BarricadeKit.swift */; };
 		5BB0199A1EC37937001D97FC /* FileBasedResponseGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB019991EC37937001D97FC /* FileBasedResponseGenerator.swift */; };
 		68D740F828B4C2CB0035AB1A /* BarricadeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D740F728B4C2CB0035AB1A /* BarricadeTests.swift */; };
@@ -123,6 +125,8 @@
 		5B9E8EDA1EBD072F002A85B5 /* NetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
 		5B9E8EDC1EBD072F002A85B5 /* ResponseSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSet.swift; sourceTree = "<group>"; };
 		5B9E8EDE1EBD072F002A85B5 /* ResponseStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseStore.swift; sourceTree = "<group>"; };
+		5BAD198B29101C8700C37D93 /* SimulatedSystemError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedSystemError.swift; sourceTree = "<group>"; };
+		5BAD198D291021E500C37D93 /* SimulatedSystemErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedSystemErrorResponse.swift; sourceTree = "<group>"; };
 		5BB019971EC37336001D97FC /* BarricadeKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarricadeKit.swift; sourceTree = "<group>"; };
 		5BB019991EC37937001D97FC /* FileBasedResponseGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileBasedResponseGenerator.swift; sourceTree = "<group>"; };
 		68D740F728B4C2CB0035AB1A /* BarricadeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarricadeTests.swift; path = ../Test/BarricadeTests.swift; sourceTree = "<group>"; };
@@ -323,6 +327,8 @@
 				5B11E8B91EC0C39F0011832A /* StandardNetworkResponse.swift */,
 				5B7DC4EE1EC0E0C500FCDA3A /* ErrorResponse.swift */,
 				5B7DC4F01EC0E0EF00FCDA3A /* StandardErrorResponse.swift */,
+				5BAD198B29101C8700C37D93 /* SimulatedSystemError.swift */,
+				5BAD198D291021E500C37D93 /* SimulatedSystemErrorResponse.swift */,
 				5B7DC4E61EC0D6DB00FCDA3A /* Response+Convenience.swift */,
 				5BB019991EC37937001D97FC /* FileBasedResponseGenerator.swift */,
 				68D740FF28B4C3870035AB1A /* StandardNetworkResponseTests.swift */,
@@ -687,11 +693,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B7DC5021EC2244500FCDA3A /* Header.swift in Sources */,
+				5BAD198E291021E500C37D93 /* SimulatedSystemErrorResponse.swift in Sources */,
 				5B7DC5141EC2438700FCDA3A /* ResponseSetViewController.swift in Sources */,
 				5B11E8B81EC0C3660011832A /* Response.swift in Sources */,
 				5B7DC5011EC2244500FCDA3A /* BarricadeError.swift in Sources */,
 				5BB019981EC37336001D97FC /* BarricadeKit.swift in Sources */,
 				5B7DC4E71EC0D6DB00FCDA3A /* Response+Convenience.swift in Sources */,
+				5BAD198C29101C8700C37D93 /* SimulatedSystemError.swift in Sources */,
 				5B7DC4F31EC0E25800FCDA3A /* ResponseSetEvaluation.swift in Sources */,
 				5BB0199A1EC37937001D97FC /* FileBasedResponseGenerator.swift in Sources */,
 				5B7DC4EF1EC0E0C500FCDA3A /* ErrorResponse.swift in Sources */,

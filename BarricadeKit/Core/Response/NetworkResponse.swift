@@ -38,7 +38,7 @@ public protocol NetworkResponse {
      the network response that is returned from the barricade. Simple implementations of this protocol
      can implement this method to just return a copy of the existing request.
      
-     More advanced implementations of the protocol could implement this method as a hook to inject dynamic
+     More advanced implementations of the protocol could implement this function as a hook to inject dynamic
      data into the response object before returning it to the called. For example, this could be used to
      set the `date` field of a JSON property in the response so that it is always today's date, whereas
      if the response is simply returning a static JSON  file, the date would not dynamically change.

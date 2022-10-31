@@ -112,7 +112,8 @@ open class Barricade: URLProtocol {
             let modifiedResponse = networkResponse.modifiedResponse(for: request)
             respond(with: modifiedResponse, after: Barricade.responseDelay)
         case .error(let errorResponse):
-            respond(with: errorResponse.error, after: Barricade.responseDelay)
+            let error = errorResponse.error(for: request)
+            respond(with: error, after: Barricade.responseDelay)
         }
     }
     
