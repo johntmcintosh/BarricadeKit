@@ -9,19 +9,28 @@
 import Foundation
 
 
-public enum BarricadeError: Error, Equatable {
-    case noResponseRegistered(URLRequest)
-    case unableToGenerateUrlResponse
-    case emptyFilePath
-    case responseFileNotFound
-    case malformedJson
-    case unknown
+public enum BarricadeError: LocalizedError, CustomNSError, Equatable {
+    case noResponseRegistered(URLRequest)   // code 0
+    case unableToGenerateUrlResponse        // code 1
+    case emptyFilePath                      // code 2
+    case responseFileNotFound               // code 3
+    case malformedJson                      // code 4
+    case unknown                            // code 5
 }
 
+public extension BarricadeError {
+    var errorUserInfo: [String : Any] {
+        var userInfo: [String: Any] = [:]
+        if let errorDescription { userInfo[NSLocalizedDescriptionKey] = errorDescription }
+        if let failureReason { userInfo[NSLocalizedFailureReasonErrorKey] = failureReason }
+        if let recoverySuggestion { userInfo[NSLocalizedRecoverySuggestionErrorKey] = recoverySuggestion }
+        return userInfo
+    }
+}
 
-extension BarricadeError {
+public extension BarricadeError {
     
-    var localizedDescription: String {
+    var errorDescription: String? {
         switch self {
         case .noResponseRegistered(let request):
             return "Barricade attempted to return a response, but no response has been registered that is capable of responding to the request to the URL: \(request.url?.absoluteString ?? "")"
