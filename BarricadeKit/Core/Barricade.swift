@@ -107,13 +107,12 @@ open class Barricade: URLProtocol {
                 return
         }
         
-        switch response {
+        let modifiedResponse = response.modified(for: request)
+        switch modifiedResponse {
         case .network(let networkResponse):
-            let modifiedResponse = networkResponse.modifiedResponse(for: request)
-            respond(with: modifiedResponse, after: Barricade.responseDelay)
+            respond(with: networkResponse, after: Barricade.responseDelay)
         case .error(let errorResponse):
-            let error = errorResponse.error(for: request)
-            respond(with: error, after: Barricade.responseDelay)
+            respond(with: errorResponse, after: Barricade.responseDelay)
         }
     }
     
@@ -128,6 +127,14 @@ open class Barricade: URLProtocol {
         respond(with: BarricadeError.noResponseRegistered(request), after: Barricade.responseDelay)
     }
     
+    private func respond(with errorResponse: ErrorResponse, after delay: TimeInterval) {
+        if let error = errorResponse.error {
+            respond(with: error, after: delay)
+        } else {
+            respond(with: BarricadeError.errorResponseMissingError, after: delay)
+        }
+    }
+
     private func respond(with error: Error, after delay: TimeInterval) {
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             guard !self.canceled else { return }

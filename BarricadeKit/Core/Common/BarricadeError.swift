@@ -15,7 +15,8 @@ public enum BarricadeError: LocalizedError, CustomNSError, Equatable {
     case emptyFilePath                      // code 2
     case responseFileNotFound               // code 3
     case malformedJson                      // code 4
-    case unknown                            // code 5
+    case errorResponseMissingError          // code 5
+    case unknown                            // code 6
 }
 
 public extension BarricadeError {
@@ -42,6 +43,8 @@ public extension BarricadeError {
             return "No file could be found at the provided location."
         case .malformedJson:
             return "There was an attempt to generate a response with a malformed JSON object. Double-check that your object is valid JSON."
+        case .errorResponseMissingError:
+            return "An error response was triggered, but no error value was present."
         case .unknown:
             return "An unknown error has occurred."
         }

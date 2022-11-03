@@ -26,10 +26,14 @@ public struct StandardNetworkResponse: NetworkResponse {
         }
     }
 
-    public func modifiedResponse(for: URLRequest) -> NetworkResponse {
-        return self
+    private var modifyResponseForRequest: ((StandardNetworkResponse, URLRequest) -> Response)?
+    public func modifiedResponse(for request: URLRequest) -> Response {
+        if let modifyResponseForRequest = modifyResponseForRequest {
+            return modifyResponseForRequest(self, request)
+        } else {
+            return .network(self)
+        }
     }
-    
 
     // MARK: Custom
     
@@ -47,9 +51,10 @@ public struct StandardNetworkResponse: NetworkResponse {
     
     // MARK: Initializers
     
-    public init(name: String, statusCode: Int, contentType: String? = nil) {
+    public init(name: String, statusCode: Int, contentType: String? = nil, modifyResponseForRequest: ((StandardNetworkResponse, URLRequest) -> Response)? = nil) {
         self.name = name
         self.statusCode = statusCode
         self.contentType = contentType
+        self.modifyResponseForRequest = modifyResponseForRequest
     }
 }

@@ -12,6 +12,8 @@ import Foundation
 public struct StandardErrorResponse: ErrorResponse {
     
     public var name: String
+    public var error: Error?
+    
     private var errorGenerator: (URLRequest) -> Error
     
     public init(name: String, errorGenerator: @escaping (URLRequest) -> Error) {
@@ -21,6 +23,7 @@ public struct StandardErrorResponse: ErrorResponse {
 
     public init(name: String, error: Error) {
         self.name = name
+        self.error = error
         self.errorGenerator = { _ in error }
     }
     

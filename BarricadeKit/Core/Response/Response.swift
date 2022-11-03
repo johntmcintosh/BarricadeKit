@@ -26,3 +26,16 @@ extension Response {
         }
     }
 }
+
+extension Response {
+    
+    func modified(for request: URLRequest) -> Response {
+        switch self {
+        case .network(let networkResponse):
+            return networkResponse.modifiedResponse(for: request)
+        case .error(let errorResponse):
+            let modifiedError = errorResponse.error(for: request)
+            return .error(StandardErrorResponse(name: errorResponse.name, error: modifiedError))
+        }
+    }
+}

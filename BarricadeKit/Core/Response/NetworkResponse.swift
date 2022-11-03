@@ -43,7 +43,7 @@ public protocol NetworkResponse {
      set the `date` field of a JSON property in the response so that it is always today's date, whereas
      if the response is simply returning a static JSON  file, the date would not dynamically change.
      */
-    func modifiedResponse(for: URLRequest) -> NetworkResponse
+    func modifiedResponse(for: URLRequest) -> Response
 }
 
 

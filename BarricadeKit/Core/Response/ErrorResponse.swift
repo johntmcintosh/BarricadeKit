@@ -15,6 +15,8 @@ public protocol ErrorResponse {
     /// It is for the developer's use only.
     var name: String { get }
     
+    var error: Error? { get }
+
     /**
      Barricade will call this method on an ErrorResponse object and will use its return value for populating
      the Error response that is returned from the barricade. Simple implementations of this protocol
