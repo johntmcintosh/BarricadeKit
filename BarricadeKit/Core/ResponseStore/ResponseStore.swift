@@ -36,6 +36,9 @@ public class InMemoryResponseStore: ResponseStore {
     public private(set) var responseSets: [ResponseSet] = []
     private var currentResponseForSet: [String: Response] = [:]
     
+    public init() {
+        // Empty initializer to allow public instantiation
+    }
     
     // MARK: Registration
     
