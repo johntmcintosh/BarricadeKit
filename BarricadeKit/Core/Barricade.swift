@@ -67,10 +67,17 @@ open class Barricade: URLProtocol {
     public static func unregister(set: ResponseSet) {
         responseStore.unregister(set: set)
     }
-    
-    public static func selectResponse(for request: String, with name: String) {
-        guard let set = responseStore.responseSet(for: request) else { return }
-        responseStore.selectCurrentResponse(in: set, named: name)
+
+    /**
+     Tells Barricade to set a response object to be returned the next time the request is sent.
+     - Parameters:
+       - request: The operation name for the request
+       - name: The display name of the response
+     - Returns: Whether or not there was a response object found in the response store for the provided request operation name
+    */
+    @discardableResult public static func selectResponse(for request: String, with name: String) -> Bool {
+        guard let set = responseStore.responseSet(for: request) else { return false }
+        return responseStore.selectCurrentResponse(in: set, named: name)
     }
     
     public static func resetSelections() {
