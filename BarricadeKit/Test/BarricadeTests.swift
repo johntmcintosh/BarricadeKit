@@ -66,9 +66,20 @@ class BarricadeTests: XCTestCase {
         waitForExpectations(timeout: 2.0, handler: nil)
     }
     
-    
+    func testReturnedTrueForFoundResponse() {
+        Barricade.register(set: .make())
+        let result = Barricade.selectResponse(for: "login", with: "anything")
+        XCTAssertTrue(result)
+    }
+
+    func testReturnedFalseForMissingResponse() {
+        let result = Barricade.selectResponse(for: "missingOperation", with: "anything")
+        XCTAssertFalse(result)
+    }
+
+
     // MARK: Errors
-    
+
     func testNoResponseRegistered() {
         let completionExpectation = expectation(description: "request completed")
         let urlRequest = URLRequest(url: URL(string: "http://example.com")!)

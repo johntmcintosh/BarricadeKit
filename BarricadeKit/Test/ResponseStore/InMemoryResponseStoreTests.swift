@@ -47,6 +47,17 @@ class InMemoryResponseStoreTests: XCTestCase {
         XCTAssertEqual(responseStore.responseSets[0].requestName, "B")
     }
     
+    func testReturnedTrueForFoundResponse() {
+        responseStore.register(set: .makeSetA())
+        let result = responseStore.selectCurrentResponse(in: .makeSetA(), named: "success")
+        XCTAssertTrue(result)
+    }
+
+    func testReturnedFalseForMissingResponse() {
+        let result = responseStore.selectCurrentResponse(in: .makeSetA(), named: "missingResponse")
+        XCTAssertFalse(result)
+    }
+
     
     // MARK: Selection Management
     

@@ -23,7 +23,7 @@ public protocol ResponseStore {
     
     func responseSet(for requestNamed: String) -> ResponseSet?
     
-    func selectCurrentResponse(in set: ResponseSet, named: String)
+    @discardableResult func selectCurrentResponse(in set: ResponseSet, named: String) -> Bool
     
     func unregister(set: ResponseSet)
     
@@ -82,9 +82,10 @@ public class InMemoryResponseStore: ResponseStore {
         return current
     }
     
-    public func selectCurrentResponse(in set: ResponseSet, named: String) {
-        guard let response = set.response(named: named) else { return }
+    @discardableResult public func selectCurrentResponse(in set: ResponseSet, named: String) -> Bool {
+        guard let response = set.response(named: named) else { return false }
         currentResponseForSet[set.requestName] = response
+        return true
     }
     
     public func resetSelections() {
